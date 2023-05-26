@@ -1,0 +1,56 @@
+.platform {
+    display: flex;
+    flex-direction: column;
+    width: 950px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.platform h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.platform--icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(247, 247, 247);
+}
+
+.single--icon {
+    margin: 30px;
+    font-size: 120px;
+    cursor: pointer;
+}
+
+.single--icon:hover {
+    transition: 0.2s ease-in-out;
+    font-size: 130px;
+}
+
+@media (min-width: 360px) and (max-width: 599px) {
+
+    .platform {
+        width: 98%;
+        margin-top: -10px;
+    }
+
+    .platform h1 {
+        font-size: 35px;
+    }
+
+    .platform--icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: auto;
+    }
+
+    .single--icon {
+        font-size: 60px;
+    }
+
+    .single--icon:hover {
+        font-size: 80px;
+    }
+}

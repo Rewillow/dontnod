@@ -1,0 +1,16 @@
+.carousel-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.carousel-img {
+    width: 950px;
+}
+
+@media (min-width: 360px) and (max-width: 599px) {
+    .carousel-img {
+        width: 98%; 
+    }
+}
