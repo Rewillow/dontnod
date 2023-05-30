@@ -1,20 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Navbar.css'
+import axios from 'axios';
 
+import './Navbar.css'
 import Logo from '../../../../public/assets/dontnod.svg'
+
+
+import {MdOutlineAccountCircle} from 'react-icons/md'
 
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-
     const navigate = useNavigate();
 
-    const handleLogout = () => {
-      setIsLoggedIn(false)
-      navigate("/login")
-    }
+
+    useEffect(() => {
+      // Funzione per controllare lo stato di accesso dell'utente
+      const checkLoginStatus = async () => {
+        try {
+          // Recupera il valore di isLoggedIn dalla cache
+          const isLoggedIn = localStorage.getItem('isLoggedIn') === "true";
+          setIsLoggedIn(isLoggedIn);
+        
+
+        } catch (error) {
+          console.error('Errore nella verifica dello stato di accesso', error);
+        }
+      };
+      checkLoginStatus();
+    }, []);
+    
+
     
     return (
       <div className="Navbar">
@@ -26,10 +43,10 @@ const Navbar = () => {
       </div>
       <div className="nav-buttons">
         {isLoggedIn ? (
-          // Mostra i pulsanti per l'utente autenticato
-          <button className='button-logout' onClick={handleLogout}>LOGOUT</button>
+          <div className='nav-buttons-login'>
+          <a href='/profile'><MdOutlineAccountCircle className='profile--icon' /></a>
+         </div>
         ) : (
-          // Mostra i pulsanti per l'utente non autenticato
           <>
             <a href="/signup"><button className='button-signup'>SIGN UP</button></a>
             <a href="/login"><button className='button-login'>LOGIN</button></a>

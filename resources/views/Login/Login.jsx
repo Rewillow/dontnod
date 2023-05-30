@@ -1,12 +1,15 @@
 import './Login.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 
 const Login = () => {
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
 
+
+    // Chiamata POST per effettuare il LOGIN
     const loginUser = async(event) => {
         event.preventDefault();
 
@@ -14,18 +17,20 @@ const Login = () => {
         const password = document.querySelector('input[name="password"]').value;
 
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/login', {
+            await axios.post('http://127.0.0.1:8000/api/login', {
                 email: email,
                 password: password
             });
-
             navigate ("/home");
+            localStorage.setItem('isLoggedIn', 'true');
         }
-
         catch(error) {
             console.error(error);
         }
+        window.location.reload();
     }
+
+
 
     
     return (

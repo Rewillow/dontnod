@@ -19,14 +19,13 @@ const SignUp = () => {
             email: email,
             password: password,
           });
-
           navigate("/home")
-          console.log(response.data);
-          
+          localStorage.setItem('isLoggedIn', 'true');
         } 
         catch (error) {
           console.error(error);
         }
+        window.location.reload();
       };
       
       

@@ -1,0 +1,31 @@
+.account {
+    margin-left: 20px;
+
+}
+
+.account h2 {
+    color: white;
+    font-size: 30px;
+}
+
+.account p {
+    color: white;
+}
+
+.account--input form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.account--input form label {
+    color: white;
+    margin-top: 10px;
+}
+
+.account input {
+    pointer-events: none;
+    max-width: 350px;
+    margin-top: 5px;
+}

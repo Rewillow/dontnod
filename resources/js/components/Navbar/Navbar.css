@@ -85,6 +85,19 @@
   .Navbar > .nav-toggle {
     display: none;
   }
+
+  .profile--icon {
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.profile--icon:hover {
+    transition: 0.4s ease-in-out;
+    color: #009B96;
+}
+
+
   
   @media (max-width: 700px) {
 

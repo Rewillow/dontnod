@@ -8,6 +8,8 @@ import Login from '../views/Login/Login';
 import SignUp from '../views/SignUp/SignUp';
 import About from '../views/About/About'
 import Play from "./components/Play/Play";
+import Profile from "../views/Profile/Profile";
+
 
 const AppRouter = () => {
     return (
@@ -20,6 +22,7 @@ const AppRouter = () => {
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
     )

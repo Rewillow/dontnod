@@ -1,0 +1,59 @@
+.profile {
+    height: 120vh;
+}
+
+.profile--text {
+    width: 37%;
+    margin-left: 75px;
+    margin-top: 20px;
+}
+
+.profile--text h1 {
+    color: white;
+    font-size: 45px;
+}
+
+.profile--text p {
+    color: white;
+}
+
+.profile--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    margin-top: 4vh;
+    background-color: #005e5b;
+}
+
+.profile--sections {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 95%;
+    
+}
+
+.profile--sections button {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.profile--sections--icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.profile--sections--details {
+    border-left: 2px solid rgba(206, 206, 206, 0.544);
+    width: 80%;
+    height: 95%;
+}

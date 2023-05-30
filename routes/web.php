@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
+Route::get('/{any}', function () { // In questo modo la funzionalità delle rotte viene passato al FrontEnd
     return view('welcome');
 })->where('any', '.*');
