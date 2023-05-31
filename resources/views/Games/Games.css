@@ -100,10 +100,11 @@
         margin: auto;
         width: 95%;
         margin-bottom: 25px;
+        margin-top: 30px;
      }
 
     .games--container--rm--img {
-        width: 95%;
+        width: 100%;
         margin-bottom: 10px;
     }
 
@@ -112,7 +113,7 @@
     }
 
     .remember--me {
-        width: 95%;
+        width: 100%;
     }
 
     .games--container--rm--text {
@@ -125,5 +126,97 @@
 
     .games--container--platforms--icons {
         margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 799px) {
+
+    .games--container--text h1 {
+        font-size: 35px;
+    }
+
+    .games--container--text p {
+        font-size: 16px;
+    }
+
+    .games--container--rm {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 95%;
+        margin-bottom: 25px;
+        margin-top: 30px;
+        
+     }
+
+    .games--container--rm--img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .games--container--logo {
+        margin-bottom: 15px;
+    }
+
+    .remember--me {
+        width: 100%;
+    }
+
+    .games--container--rm--text {
+        width: 95%;
+    }
+
+    .games--container--rm--text p {
+        margin-bottom: 20px;
+    }
+
+    .games--container--platforms--icons {
+        margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 800px) and (max-width: 999px) {
+
+    .games--container--rm {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 95%;
+        margin-bottom: 25px;
+        margin-top: 30px;
+     }
+
+    .games--container--rm--img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .games--container--logo {
+        margin-bottom: 15px;
+    }
+
+    .remember--me {
+        width: 100%;
+    }
+
+    .games--container--rm--text {
+        width: 98%;
+    }
+
+    .games--container--rm--text p {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .games--container--platforms--icons {
+        margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 1540px) {
+    .games--container--rm--text p {
+        font-size: 19px;
     }
   }

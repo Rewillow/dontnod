@@ -241,6 +241,10 @@ transform: translateX(9px);
         margin-bottom: 130px;
     }
 
+    .home--text--discover {
+        font-size: 50px;
+    }
+
     .home--about--text {
         width: 37%;
     }

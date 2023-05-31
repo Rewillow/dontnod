@@ -119,10 +119,10 @@ const Games = () => {
         {titles.map((title, index) => (
         <section key={index} className='games--container--rm'>
         <div className='games--container--rm--img'>
-        <img src={title.image} className='remember--me' alt="Immagine del gioco" />
+        <img src={title.image} className='remember--me' alt="Game Image" />
         </div>
         <div className='games--container--rm--text'>
-        <img src={title.logo} className='games--container--logo' alt='Logo gioco' />
+        <img src={title.logo} className='games--container--logo' alt='Logo Image' />
         <p>{title.description}</p>
         <div className='games--container--platforms--icons'>
         {title.platforms.map((platform, platformIndex) => (
