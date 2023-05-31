@@ -35,7 +35,7 @@ const Account = () => {
             <label>Email *</label>
             <input type='text' value={(user && user.email) || defaultUser.email} readOnly></input>
             <label>Password *</label>
-            <input type='password' value={(user && user.password) || defaultUser.password} readOnly></input>
+            <input type='password' value={'***********'} readOnly></input>
         </form>
         </div>
         <p>* <span>You can not modify the input values!</span></p>

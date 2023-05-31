@@ -9,7 +9,7 @@ import {IoLogoGameControllerA} from 'react-icons/io'
 
 // Importo i componenti dei relativi pulsanti
 import Account from '../../js/components/Account/Account';
-import Theme from '../../js/components/Theme/Theme';
+import DarkMode from '../../js/components/DarkMode/DarkMode';
 import VideoGames from '../../js/components/VideoGames/VideoGames';
 
 import './Profile.css'
@@ -41,8 +41,6 @@ const Profile = () => {
       // Creo la logica secondo la quale, in base al valore di "selectedTab", viene restituito il rispettivo componente
       if(selectedTab === 'account') {
         content = <Account />
-      } else if (selectedTab === 'darkMode') {
-        content = <Theme />
       } else if (selectedTab === 'games') {
         content = <VideoGames />
       } else {
@@ -57,8 +55,7 @@ const Profile = () => {
         </div>
         <div className='profile--container'>
             <div className='profile--sections'>
-              <button onClick={() => setSelectedTab('account')}> <MdAccountCircle className='profile--sections--icon'/> Account </button>
-              <button onClick={() => setSelectedTab('darkMode')}> <MdDarkMode className='profile--sections--icon' /> Dark Mode </button>
+              <button onClick={() => setSelectedTab('account')} > <MdAccountCircle className='profile--sections--icon'/> Account </button>
               <button onClick={() => setSelectedTab('games')}> <IoLogoGameControllerA className='profile--sections--icon' /> Games </button>
               <button onClick={logOut}> <MdLogout className='profile--sections--icon' /> Logout </button>
             </div>

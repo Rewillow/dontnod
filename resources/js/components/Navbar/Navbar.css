@@ -86,10 +86,17 @@
     display: none;
   }
 
+  .nav-buttons-login {
+    display: flex;
+    padding: 5px 10px;
+  }
+
   .profile--icon {
+    display: flex;
     color: white;
     font-size: 40px;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .profile--icon:hover {

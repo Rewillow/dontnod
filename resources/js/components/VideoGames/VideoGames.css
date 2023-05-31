@@ -1,0 +1,45 @@
+.videogames {
+    margin-left: 20px;
+}
+
+.videogames h2 {
+    color: white;
+    font-size: 30px;
+}
+
+.videogames p {
+    color: white;
+}
+
+.videogames--list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin-top: 20px;
+}
+
+.videogames--list--icon {
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.videogames--list button {
+    background-color: rgb(35, 35, 35);
+    border: 1px solid rgb(220, 220, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 200px;
+    height: 75px;
+    margin-top: 15px;
+}
+
+.videogames--list img {
+    width: 100px;
+    object-fit: contain;
+}

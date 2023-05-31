@@ -8,6 +8,8 @@ import Logo from '../../../../public/assets/dontnod.svg'
 
 import {MdOutlineAccountCircle} from 'react-icons/md'
 
+import DarkMode from '../DarkMode/DarkMode';
+
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -45,6 +47,7 @@ const Navbar = () => {
         {isLoggedIn ? (
           <div className='nav-buttons-login'>
           <a href='/profile'><MdOutlineAccountCircle className='profile--icon' /></a>
+          <DarkMode />
          </div>
         ) : (
           <>
