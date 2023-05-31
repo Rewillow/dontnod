@@ -120,7 +120,7 @@ transform: translateX(9px);
 
 @media (min-width: 360px) and (max-width: 599px) {
     .home-logo {
-        width: 95%;
+        width: 90%;
     }
  
     .home--text--discover {
@@ -153,4 +153,114 @@ transform: translateX(9px);
         width: 98%;
     }
 }
+
+@media (min-width: 600px) and (max-width: 799px) {
+
+    .home-logo {
+        width: 93%;
+    }
+ 
+    .home--text--discover {
+        font-size: 37px;
+    }
+
+    .home--about {
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+    .home--about--text {
+        width: 98%;
+    }
+
+    .home--about--text h1 {
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .home--about--text p {
+        font-size: 15px;
+    }
+
+    .home--about--button {
+        margin-bottom: 20px;
+    }
+
+    .home--about--img {
+        width: 98%;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+
+    .home-logo {
+        width: 95%;
+    }
+ 
+    .home--about {
+        flex-direction: column;
+        margin-top: 25px;
+        width: 85%;
+    }
+
+    .home--about--text {
+        width: 100%;
+    }
+
+    .home--about--text h1 {
+        text-align: center;
+    }
+
+    .home--about--text p {
+        font-size: 15px;
+    }
+
+    .home--about--button {
+        margin-bottom: 20px;
+    }
+
+    .home--about--img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1299px) {
+
+    .home--about--text {
+        width: 34%;
+    }
+ 
+    .home--about--img {
+        width: 530px;
+    }
+}
+
+@media (min-width: 1540px) {
+    
+    .home--about {
+        margin-bottom: 130px;
+    }
+
+    .home--about--text {
+        width: 37%;
+    }
+    
+    .home--about--text h1 {
+        font-size: 55px;
+    }
+
+    .home--about--text p {
+        font-size: 19px;
+    }
+
+    .home--about--button {
+        font-size: 16px
+    }
+
+    .home--about--img {
+        width: 750px;
+    }
+    
+}
+
 
