@@ -161,7 +161,6 @@ const playerConfig = {controls: ['play', 'progress', 'volume', 'fullscreen']}
 
   return (
     <div className="game">
-      {game && <h1 className="game--title">{game.title}</h1>}
       <img src={game.cover} className="game--cover"/>
       <div className="game--about">
       <div className="game--information">
@@ -184,13 +183,6 @@ const playerConfig = {controls: ['play', 'progress', 'volume', 'fullscreen']}
       )}
       </div>
       </div>
-      <div className="game--awards"> 
-      <div>
-      {game.awards && game.awards.map((award, awardIndex) => (
-        <img src={award} key={awardIndex} className="game--prize" />
-      ))}
-      </div>
-      </div>
       <div className="game--client">
       <h1>Avaible on</h1>
       <div className="game--client--container">
@@ -199,6 +191,14 @@ const playerConfig = {controls: ['play', 'progress', 'volume', 'fullscreen']}
       ))}
       </div>
       </div>
+      <div className="game--awards"> 
+      <div className="game--awards--list">
+      {game.awards && game.awards.map((award, awardIndex) => (
+        <img src={award} key={awardIndex} className="game--prize" />
+      ))}
+      </div>
+      </div>
+
       </div>
   );
 };

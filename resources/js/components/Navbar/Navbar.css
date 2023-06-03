@@ -139,6 +139,27 @@
         transform: translateX(0);
     }
 
+    .Navbar > .nav-buttons {
+      border: 1px solid red;
+      position: absolute;
+      top: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000000;
+      left: 0;
+      width: 100%;
+      height: auto;
+      padding: 5px 0;
+      transform: translateX(-100%);
+      transition: all .45s;
+    }
+    
+    .Navbar > .nav-buttons.open {
+      transform: translateX(0);
+    }
+    
+
     .Navbar > a > .nav-logo {
       width: 110px;
     }

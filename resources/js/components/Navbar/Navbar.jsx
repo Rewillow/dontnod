@@ -14,8 +14,6 @@ import DarkMode from '../DarkMode/DarkMode';
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const navigate = useNavigate();
-
 
     useEffect(() => {
       // Funzione per controllare lo stato di accesso dell'utente
@@ -24,8 +22,6 @@ const Navbar = () => {
           // Recupera il valore di isLoggedIn dalla cache
           const isLoggedIn = localStorage.getItem('isLoggedIn') === "true";
           setIsLoggedIn(isLoggedIn);
-        
-
         } catch (error) {
           console.error('Errore nella verifica dello stato di accesso', error);
         }
@@ -43,7 +39,7 @@ const Navbar = () => {
         <a href="/games">Games</a>
         <a href="/about">About us</a>
       </div>
-      <div className="nav-buttons">
+      <div className={`nav-buttons ${isOpen && "open"}`}>
         {isLoggedIn ? (
           <div className='nav-buttons-login'>
           <a href='/profile'><MdOutlineAccountCircle className='profile--icon' /></a>

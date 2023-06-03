@@ -1,8 +1,4 @@
 
-.game--title {
-    display: none;
-}
-
 .game--cover {
     width: 100%;
 }
@@ -98,6 +94,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
     margin-bottom: 80px;
 }
 
@@ -123,7 +120,6 @@
     width: 100%;
     min-height: 83px;
     margin-top: 15px;
-
 }
 
 .single--client {
@@ -144,4 +140,227 @@
 
 .game--prize {
     margin: 0 20px;
+}
+
+@media (min-width:360px) and (max-width: 599px) {
+    .game--about { 
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .game--watch--video {
+        margin-top: 60px;
+    }
+
+    .game--information {
+        width: 100%;
+    }
+    
+    .game--information h3 {
+        font-size: 17px;
+    }
+
+    .game--client--container { 
+        flex-direction: column;
+        width: 95%;
+    }
+    
+    .game--client--container--button {
+         margin: auto;
+         width: 65%;
+         margin-bottom: 15px;
+         margin-top: 25px;
+    }
+    
+    .youtube--video--container {
+        width: 100%;
+        height: 47%;
+    }
+    
+    .youtube--wrapper {
+        width: 90%;
+        height: 100%;
+    }
+
+    .game--close--video {
+        font-size: 33px;
+        padding: 12px;
+    }
+
+    .game--awards {
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+
+    .game--awards--list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .game--prize {
+        width: 150px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width:600px) and (max-width: 799px) {
+    .game--about { 
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .game--watch--video {
+        margin-top: 60px;
+    }
+
+    .game--information {
+        width: 100%;
+    }
+    
+    .game--information h3 {
+        font-size: 17px;
+    }
+
+    .game--client--container { 
+        flex-direction: column;
+        width: 95%;
+    }
+    
+    .game--client--container--button {
+         margin: auto;
+         width: 45%;
+         margin-bottom: 15px;
+         margin-top: 25px;
+    }
+    
+    .youtube--video--container {
+        width: 100%;
+        height: 55%;
+    }
+    
+    .youtube--wrapper {
+        width: 90%;
+        height: 100%;
+    }
+
+    .game--close--video {
+        font-size: 33px;
+        padding: 11px;
+    }
+
+    .game--awards--list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .game--prize {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin: 0 5px;
+        padding: 5px;
+    }
+}
+
+@media (min-width:800px) and (max-width: 999px) {
+    .game--about { 
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .game--watch--video {
+        margin-top: 60px;
+    }
+
+    .game--information {
+        width: 100%;
+    }
+    
+    .game--information h3 {
+        font-size: 17px;
+    }
+
+    
+    .youtube--video--container {
+        width: 100%;
+        height: 60%;
+    }
+    
+    .youtube--wrapper {
+        width: 90%;
+        height: 100%;
+    }
+
+    .game--close--video {
+        font-size: 33px;
+        padding: 11px;
+    }
+    
+    .game--awards--list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        width: 100%;
+
+    }
+
+    .game--prize {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+}
+
+@media (min-width:1000px) and (max-width: 1299px) {
+
+    .game--about {
+        width: 95%;
+    }
+
+    .game--information {
+        width: 60%;
+    }
+
+    .youtube--video--container {
+        width: 85%;
+        height: 70%;
+    }
+    
+    .youtube--wrapper {
+        width: 95%;
+        height: 95%;
+    }
+
+    .game--close--video {
+        font-size: 33px;
+        padding: 11px;
+    }
+
+    .game--awards--list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        width: 70%;
+
+    }
+
+    .game--prize {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+}
+
+@media (min-width: 1540px) {
+    .game--about {
+        width: 95%;
+    }
+    
+    .game--information {
+        width: 60%;
+    }
 }
