@@ -114,3 +114,68 @@ input:focus::placeholder {
 .signup--field--signup {
     margin-top: 15px;
 }
+
+@media (min-width: 360px) and (max-width: 799px) {
+    .signup--container {
+        height: 95%;
+        width: 98%;
+        margin: auto;
+    }
+    
+    .signup--elements {
+        background-image: url(../../../public/assets/SignUpWallpaper2.png);
+        height: 95%;
+        width: 90%;
+        border-radius: 20px;
+    }
+
+    .signup--container--input {
+        margin: auto;
+        height: 50%;
+        width: 90%;
+        margin-top: 360px;
+    }
+
+    .signup--field--signup {
+        text-align: center;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+    .signup--container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        width: 90%;
+        margin: auto;
+    }
+    
+    .signup--elements {
+        flex-direction: column;
+        align-items: flex-end;
+        background-image: url(../../../public/assets/SignUpWallpaper999.png);
+        height: 80%;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1299px) {
+    .signup--container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        width: 90%;
+        margin: auto;
+    }
+    
+    .signup--elements {
+        flex-direction: column;
+        align-items: flex-end;
+        background-image: url(../../../public/assets/SignUpWallpaper1299.png);
+        height: 80%;
+        width: 100%;
+    }
+}
+

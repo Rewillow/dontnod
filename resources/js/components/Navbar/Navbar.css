@@ -140,7 +140,6 @@
     }
 
     .Navbar > .nav-buttons {
-      border: 1px solid red;
       position: absolute;
       top: 230px;
       display: flex;
