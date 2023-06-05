@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 import './Navbar.css'
 import Logo from '../../../../public/assets/dontnod.svg'

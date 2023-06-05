@@ -119,6 +119,12 @@ input:focus::placeholder {
     margin-top: 5px;
 }
 
+.login--loading--icon {
+    width: 35px;
+    align-self: center;
+    margin-top: 10px;
+}
+
 
 @media (min-width: 360px) and (max-width: 445px) {
 

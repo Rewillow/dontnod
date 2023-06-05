@@ -3,8 +3,11 @@ import axios from 'axios'
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Loading from "../../../public/assets/Loading.gif"
+
+
 const SignUp = () => {
-    
+    const [isLoading, setIsLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     const navigate = useNavigate();
 
@@ -12,7 +15,7 @@ const SignUp = () => {
       if (errorMessage) {
       const timeout = setTimeout(() => {
         setErrorMessage("");
-      }, 7000);
+      }, 5000);
   
       return () => clearTimeout(timeout);
       }
@@ -26,12 +29,21 @@ const SignUp = () => {
         const password = document.querySelector('input[name="password"]').value;
       
         try {
+
+          setIsLoading(true);
+      
+          // Simula un ritardo di 5 secondi
+          await new Promise((resolve) => setTimeout(resolve, 3000));
+
           await axios.post('http://127.0.0.1:8000/api/register', {
             name: name,
             email: email,
             password: password,
           });
-          navigate("/home")
+
+          setIsLoading(false);
+          navigate("/home");
+          window.location.reload();
           localStorage.setItem('isLoggedIn', 'true');
         } 
         catch (error) {
@@ -56,6 +68,7 @@ const SignUp = () => {
                    {errorMessage && <p style={{ color: `red`, fontWeight: `light`, marginTop: `7px`, fontSize: `14px` }}>{errorMessage}</p>}
                    <button className='signup--field--button' onClick={registerUser}>SIGN UP</button>
                    <p className='signup--field--signup'>Do you already have an account? <a href='/login'>Click here!</a></p>
+                   {isLoading && <img src={Loading} className='login--loading--icon'/>}
                    </div>
                    </div>
                 </div>
