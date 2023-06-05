@@ -1,10 +1,22 @@
 import './SignUp.css'
 import axios from 'axios'
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
-
+    
+    const [errorMessage, setErrorMessage] = useState("")
     const navigate = useNavigate();
+
+    useEffect(() => {
+      if (errorMessage) {
+      const timeout = setTimeout(() => {
+        setErrorMessage("");
+      }, 7000);
+  
+      return () => clearTimeout(timeout);
+      }
+      }, [errorMessage]);
 
     const registerUser = async (event) => {
         event.preventDefault();
@@ -14,7 +26,7 @@ const SignUp = () => {
         const password = document.querySelector('input[name="password"]').value;
       
         try {
-          const response = await axios.post('http://127.0.0.1:8000/api/register', {
+          await axios.post('http://127.0.0.1:8000/api/register', {
             name: name,
             email: email,
             password: password,
@@ -23,9 +35,10 @@ const SignUp = () => {
           localStorage.setItem('isLoggedIn', 'true');
         } 
         catch (error) {
-          console.error(error);
+          if(error.response && error.response.data && error.response.data.message) {
+            setErrorMessage(error.response.data.message)
+            } 
         }
-        window.location.reload();
       };
       
       
@@ -40,6 +53,7 @@ const SignUp = () => {
                    <input type='text' placeholder='Username' name='name' className='signup--field--email'></input>
                    <input type='text' placeholder='Email' name='email' className='signup--field--email'></input>
                    <input type='password' placeholder='Password' name='password'></input>
+                   {errorMessage && <p style={{ color: `red`, fontWeight: `light`, marginTop: `7px`, fontSize: `14px` }}>{errorMessage}</p>}
                    <button className='signup--field--button' onClick={registerUser}>SIGN UP</button>
                    <p className='signup--field--signup'>Do you already have an account? <a href='/login'>Click here!</a></p>
                    </div>

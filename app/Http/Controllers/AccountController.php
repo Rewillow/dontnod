@@ -6,28 +6,32 @@ use App\Models\Account;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller 
 {
 
     public function login(Request $request) {
-        $validatedData = $request->validate([
+        $request->validate([
             'email' => ['required', 'email'],
             'password' => 'required'
         ]);
-
-        if(auth()->attempt($validatedData)) {
-            $request->session()->regenerate();
-
-            return response()->json(['message' => 'You are now logged in!']);
+    
+        $user = Account::where('email', $request->email)->first();
+    
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return response()->json(['message' => 'Incorrect Credentials'], 401);
         }
-
-        return response()->json(['message' => 'Incorrect Credentials']);
+    
+        auth()->login($user);
+        $request->session()->regenerate();
+    
+        return response()->json(['message' => 'You are now logged in!']);
     }
-
-
+    
 
     public function register(Request $request)
+
     {
         $validatedData = $request->validate([
             'name' => 'required',
@@ -41,8 +45,11 @@ class AccountController extends Controller
             'password' => bcrypt($validatedData['password']),
         ]);
 
+        Auth::login($account); // In questo modo viene effettuata l'autenticazione automatica dell'utente
+
         return response()->json(['account'=> $account, 'message' => 'Account registered successfully'], 201);
     }
+
 
     public function logout(Request $request) { // Per effettuare il LogOut dal sito
         auth()->logout();

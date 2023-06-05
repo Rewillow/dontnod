@@ -47,6 +47,4 @@ class Account extends Model implements Authenticatable
     {
         return 'remember_token'; // Replace 'remember_token' with the actual name of your remember token column
     }
-
-
 }

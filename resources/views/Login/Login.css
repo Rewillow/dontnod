@@ -119,6 +119,7 @@ input:focus::placeholder {
     margin-top: 5px;
 }
 
+
 @media (min-width: 360px) and (max-width: 445px) {
 
     .login--container {
