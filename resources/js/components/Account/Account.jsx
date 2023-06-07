@@ -9,7 +9,7 @@ const Account = () => {
     useEffect (() => {
         const fetchUserDetails = async () => {
             try {
-                const response = await axios.get('https://dontnod-production.up.railway.app//api/user');
+                const response = await axios.get('https://dontnod-production.up.railway.app/api/user');
                 setUser(response.data)
                 const userId = response.data.id;
                 localStorage.setItem('userId', userId);
