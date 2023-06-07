@@ -55,7 +55,6 @@
     }
 
     .videogames--list {
-        border: 1px solid red;
         grid-template-columns: 1fr;
         width: 80%;
         margin-top: 20px;

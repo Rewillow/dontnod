@@ -36,7 +36,7 @@ const Login = () => {
         await new Promise((resolve) => setTimeout(resolve, 3000));
     
         // Esegui la chiamata API per effettuare il login
-        await axios.post('http://127.0.0.1:8000/api/login', {
+        await axios.post('https://dontnod-production.up.railway.app/api/login', {
           email: email,
           password: password
         });
