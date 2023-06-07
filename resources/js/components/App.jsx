@@ -1,5 +1,5 @@
 import React from "react";
-import AppRouter from "../appRouter";
+import AppRouter from "../AppRouter";
 import Navbar from "./Navbar/Navbar";
 import HideNavbar from './HideNavbar/HideNavbar'
 import Footer from "./Footer/Footer";
