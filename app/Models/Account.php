@@ -11,10 +11,8 @@ class Account extends Model implements Authenticatable
 {
     use HasFactory;
 
-        public function games()
-    {
-        return $this->belongsToMany(Game::class, 'usergames')->withPivot('is_favourite');
-    }
+        public function games() {
+        return $this->belongsToMany(Game::class, 'usergames')->withPivot('is_favourite');}
 
     protected $fillable = [
         'name',
@@ -25,36 +23,33 @@ class Account extends Model implements Authenticatable
     protected $table = 'account';
 
 
-    
-    
-
     public function getAuthIdentifierName()
     {
-        return 'email'; // Replace 'email' with the actual name of your identifier column
+        return 'email'; 
     }
 
     public function getAuthIdentifier()
     {
-        return $this->email; // Replace 'email' with the actual name of your identifier column
+        return $this->email; 
     }
 
     public function getAuthPassword()
     {
-        return $this->password; // Replace 'password' with the actual name of your password column
+        return $this->password; 
     }
 
     public function getRememberToken()
     {
-        return $this->remember_token; // Replace 'remember_token' with the actual name of your remember token column
+        return $this->remember_token; 
     }
 
     public function setRememberToken($value)
     {
-        $this->remember_token = $value; // Replace 'remember_token' with the actual name of your remember token column
+        $this->remember_token = $value; 
     }
 
     public function getRememberTokenName()
     {
-        return 'remember_token'; // Replace 'remember_token' with the actual name of your remember token column
+        return 'remember_token'; 
     }
 }

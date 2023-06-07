@@ -20,24 +20,16 @@ use App\Models\Account;
 //     return $request->user();
 // });
 
-Route::post('/register', [AccountController::class, 'register']);
+Route::post('/register', [AccountController::class, 'register']); // Per registrarsi al sito
 
-Route::post('/login', [AccountController::class, 'login']);
+Route::post('/login', [AccountController::class, 'login']); // Per effettuare il Login
 
-Route::post('/logout', [AccountController::class, 'logout']);
+Route::post('/logout', [AccountController::class, 'logout']); // Per effettuare il Logout
 
-Route::get('/checkLog', [AccountController::class, 'checkLog']);
+Route::get('/checkLog', [AccountController::class, 'checkLog']); // Per controllare se l'utente è loggato o no
 
-Route::get('/user', [AccountController::class, 'user']);
+Route::get('/user', [AccountController::class, 'user']); // Per recuperare i dati relativi all'account dell'utente
 
-Route::get('/user/{user}', [AccountController::class, 'showUser']);
 
-Route::get('/listgames', [AccountController::class, 'listgames']);
-
-Route::get('/listgames/{game}', [AccountController::class, 'showGame']);
-
-// Route::post('/listgames/{game}/toggleFavourite', [AccountController::class, 'toggleFavourite']);
-
-Route::get('/user/{user}/toggleFavourite/{game}', [AccountController::class, 'toggleFavourite']);
 
 

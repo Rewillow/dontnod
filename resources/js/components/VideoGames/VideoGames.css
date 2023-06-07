@@ -37,7 +37,9 @@
     width: 200px;
     height: 75px;
     margin-top: 15px;
-    color: white;
-    font-size: 15px;
 }
 
+.videogames--list img {
+    width: 100px;
+    object-fit: contain;
+}

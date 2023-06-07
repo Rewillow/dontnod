@@ -9,7 +9,6 @@ import {IoLogoGameControllerA} from 'react-icons/io'
 
 // Importo i componenti dei relativi pulsanti
 import Account from '../../js/components/Account/Account';
-import DarkMode from '../../js/components/DarkMode/DarkMode';
 import VideoGames from '../../js/components/VideoGames/VideoGames';
 
 import './Profile.css'
@@ -17,6 +16,7 @@ import './Profile.css'
 const Profile = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [selectedTab, setSelectedTab] = useState('account')
+    
     const navigate = useNavigate();
 
     
@@ -26,6 +26,7 @@ const Profile = () => {
           await axios.post('http://127.0.0.1:8000/api/logout');
   
           localStorage.setItem('isLoggedIn', 'false');
+          localStorage.removeItem('userId')
           navigate('/login')
           setIsLoggedIn(false)
           window.location.reload();

@@ -7,7 +7,6 @@ import Loading from "../../../public/assets/Loading.gif"
 
 
 const Login = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState('')
@@ -25,38 +24,42 @@ const Login = () => {
 
     // Chiamata POST per effettuare il LOGIN
     const loginUser = async (event) => {
-        event.preventDefault();
-        const email = document.querySelector('input[name="email"]').value;
-        const password = document.querySelector('input[name="password"]').value;
-      
-        try {
-          // Avvia il messaggio di caricamento
-          setIsLoading(true);
-      
-          // Simula un ritardo di 5 secondi
-          await new Promise((resolve) => setTimeout(resolve, 3000));
-      
-          // Esegui la chiamata API
-          await axios.post('http://127.0.0.1:8000/api/login', {
-            email: email,
-            password: password
-          });
-      
-          // Nascondi il messaggio di caricamento
-          setIsLoading(false);
-          navigate("/home");
-          window.location.reload();
-          localStorage.setItem('isLoggedIn', 'true');
-        } catch (error) {
-          if (error.response && error.response.data && error.response.data.message) {
-            setErrorMessage(error.response.data.message);
-          }
-          setIsLoading(false); // Assicurati di nascondere il messaggio di caricamento in caso di errore
+      event.preventDefault();
+      const email = document.querySelector('input[name="email"]').value;
+      const password = document.querySelector('input[name="password"]').value;
+    
+      try {
+        // Avvia il messaggio di caricamento
+        setIsLoading(true);
+    
+        // Simula un ritardo di 5 secondi
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+    
+        // Esegui la chiamata API per effettuare il login
+        await axios.post('http://127.0.0.1:8000/api/login', {
+          email: email,
+          password: password
+        });
+    
+        // Nascondi il messaggio di caricamento
+        setIsLoading(false);
+    
+        // Reindirizza l'utente alla pagina home
+        
+        navigate("/home");
+        window.location.reload();
+        localStorage.setItem('isLoggedIn', true)
+ 
+    
+      } catch (error) {
+        if (error.response && error.response.data && error.response.data.message) {
+          setErrorMessage(error.response.data.message);
         }
-      };
+        setIsLoading(false); // Assicurati di nascondere il messaggio di caricamento in caso di errore
+      }
+    };
+    
       
-      
-
 
     return (
         <form className='login'>

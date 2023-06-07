@@ -11,6 +11,8 @@ const Account = () => {
             try {
                 const response = await axios.get('http://127.0.0.1:8000/api/user');
                 setUser(response.data)
+                const userId = response.data.id;
+                localStorage.setItem('userId', userId);
             } catch(error) {
                 console.error(error)
             }

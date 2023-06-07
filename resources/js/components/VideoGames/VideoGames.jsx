@@ -1,5 +1,4 @@
 import './VideoGames.css'
-import axios from 'axios'
 
 
 // Importo i loghi dei videogiochi
@@ -20,100 +19,90 @@ import { useState, useEffect } from 'react'
 
 
 const VideoGames = () => {
-
-  const [games, setGames] = useState([]);
-
-    // const storedGameSelected = localStorage.getItem('gameSelected'); // In questo modo recupero il valore memorizzato nel "localStorage"
-    // const [gameSelected, setGameSelected] = useState( // Inizializzo lo stato "gameSelected" recuperando il valore dal "localStorage"
-    //   storedGameSelected ? JSON.parse(storedGameSelected) : []
-    // );
-
-    // const games = [ // Creo il mio array contenente i loghi dei videogiochi
-    //     {
-    //         index: 1,
-    //         logo: RememberMeLogo
-    //     },
-    //     {
-    //         index: 2,
-    //         logo: LifeIsStrangeLogo
-    //     },
-    //     {
-    //         index: 3,
-    //         logo: VampyrLogo
-    //     },
-    //     {
-    //         index: 4,
-    //         logo: CaptainSpiritLogo
-    //     },
-    //     {
-    //         index: 5,
-    //         logo: LifeIsStrange2Logo
-    //     },
-    //     {
-    //         index: 6,
-    //         logo: TellMweWhyLogo
-    //     },
-    //     {
-    //         index: 7,
-    //         logo: TwinMirrorLogo
-    //     },
-    //     {
-    //         index: 8,
-    //         logo: GerdaLogo
-    //     },
-    //     {
-    //         index: 9,
-    //         logo: BanishersLogo
-    //     },
-    //     {
-    //         index: 10,
-    //         logo: HarmonyLogo
-    //     }
-    // ]
-
-    // // Questa funzione si occupa della selezione e deselezione dei videogiochi
-    // const handleGameSelected = (index) => { // La funzione viene inizializzata con un elemento "index", che fa riferimento all'index di ogni videogioco 
-    //     setGameSelected((prevSelected) => { // Viene poi richiamata la funzione "setGameSelected", utile ad aggiornare lo stato di "gameSelected". Come parametro accetta una "callback", che definisce lo stato precedente, ovvero il valore.
-    //       if (prevSelected.includes(index)) { // Con questa condizione, se l'indice è presente nell'array, vuol dire che il gioco è stato selezionato in precedenza e quindi deve essere deselezionato. Viene quindi restituito un nuovo array dove non è più presente l'elemento deselezionato.
-    //         return prevSelected.filter((item) => item !== index);
-    //       } else {
-    //         return [...prevSelected, index];
-    //       }
-    //     });
-    //   };
-    
-    //   useEffect(() => { // Ogni volta che l'array viene modificato viene aggiornato il localStorage
-    //     localStorage.setItem('gameSelected', JSON.stringify(gameSelected));
-    //   }, [gameSelected]);
-    
-    useEffect(() => {
-      const getGames = async () => {
-        try {
-          const response = await axios.get('http://127.0.0.1:8000/api/listgames');
-          const gamesData = response.data;
-          setGames(gamesData);
-        } catch (error) {
-          console.error(error);
-        }
-      };
   
-      getGames();
-    }, []);
+
+  const games = [ { // Creo il mio array contenente i loghi dei videogiochi
+
+    index: 1,
+    logo: RememberMeLogo
+},
+{
+    index: 2,
+    logo: LifeIsStrangeLogo
+},
+{
+    index: 3,
+    logo: VampyrLogo
+},
+{
+    index: 4,
+    logo: CaptainSpiritLogo
+},
+{
+    index: 5,
+    logo: LifeIsStrange2Logo
+},
+{
+    index: 6,
+    logo: TellMweWhyLogo
+},
+{
+    index: 7,
+    logo: TwinMirrorLogo
+},
+{
+    index: 8,
+    logo: GerdaLogo
+},
+{
+    index: 9,
+    logo: BanishersLogo
+},
+{
+    index: 10,
+    logo: HarmonyLogo
+}
+]
+
+    const [userId, setUserId] = useState(localStorage.getItem('userId'));
+    const storedGameSelected = localStorage.getItem(`gameSelected_${userId}`);
+    const [gameSelected, setGameSelected] = useState(
+      storedGameSelected ? JSON.parse(storedGameSelected) : []
+    );
     
 
-    return (
-      <div className='videogames'>
-        <h2>Don't Nod Videogames</h2>
-        <p>These are all our video games. Which are your favorites?</p>
-        <div className='videogames--list'>
-          {games.map((game) => (
-            <button key={game.id}>
-              {game.title} <AiOutlineHeart className='videogames--list--icon'/>
-            </button>
-          ))}
+
+    // Questa funzione si occupa della selezione e deselezione dei videogiochi
+    const handleGameSelected = (index) => { // La funzione viene inizializzata con un elemento "index", che fa riferimento all'index di ogni videogioco 
+        setGameSelected((prevSelected) => { // Viene poi richiamata la funzione "setGameSelected", utile ad aggiornare lo stato di "gameSelected". Come parametro accetta una "callback", che definisce lo stato precedente, ovvero il valore.
+          if (prevSelected.includes(index)) { // Con questa condizione, se l'indice è presente nell'array, vuol dire che il gioco è stato selezionato in precedenza e quindi deve essere deselezionato. Viene quindi restituito un nuovo array dove non è più presente l'elemento deselezionato.
+            return prevSelected.filter((item) => item !== index);
+          } else {
+            return [...prevSelected, index];
+          }
+        });
+      };
+    
+      useEffect(() => {
+        localStorage.setItem(`gameSelected_${userId}`, JSON.stringify(gameSelected));
+      }, [gameSelected, userId]);
+      
+
+    
+      return (
+        <div className='videogames'>
+          <h2>Don't Nod Videogames</h2>
+          <p>These are all our video games. Which are your favorites?</p>
+          <div className='videogames--list'>
+            {games.map((game) => (
+              <button key={game.index} onClick={() => handleGameSelected(game.index)} >
+                <img src={game.logo}/> {gameSelected.includes(game.index) ? ( <AiFillHeart className='videogames--list--icon' /> ) : ( <AiOutlineHeart className='videogames--list--icon' /> )}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-    );
+      );
     };
 
 export default VideoGames
+
