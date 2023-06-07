@@ -32,4 +32,3 @@ Route::get('/user', [AccountController::class, 'user']); // Per recuperare i dat
 
 
 
-
