@@ -30,4 +30,14 @@ Route::get('/checkLog', [AccountController::class, 'checkLog']);
 
 Route::get('/user', [AccountController::class, 'user']);
 
+Route::get('/user/{user}', [AccountController::class, 'showUser']);
+
+Route::get('/listgames', [AccountController::class, 'listgames']);
+
+Route::get('/listgames/{game}', [AccountController::class, 'showGame']);
+
+// Route::post('/listgames/{game}/toggleFavourite', [AccountController::class, 'toggleFavourite']);
+
+Route::get('/user/{user}/toggleFavourite/{game}', [AccountController::class, 'toggleFavourite']);
+
 

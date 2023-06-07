@@ -47,6 +47,7 @@ const SignUp = () => {
           localStorage.setItem('isLoggedIn', 'true');
         } 
         catch (error) {
+          setIsLoading(false);
           if(error.response && error.response.data && error.response.data.message) {
             setErrorMessage(error.response.data.message)
             } 

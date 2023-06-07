@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Game;
 use App\Models\Account;
 use Illuminate\Http\Request;
+use App\Models\UserPreference;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -79,4 +82,43 @@ class AccountController extends Controller
        return response()->json(['message' => 'You are not logged'], 401);
      }
     }
+
+    public function showUser($id) { // Questa funziona mostra il singolo videogioco e i rispettivi dettagli
+        $user = Account::find($id); // La variabile e la rispettiva query vanno alla ricerca dell'id del videogioco
+        return response()->json($user); // Ritorna i risultati in formato "json"
+    }
+
+    public function listgames() { // Funzione che recupera la lista di tutti i videogiochi
+        $games = Game::all();
+        return response()->json($games);
+    }
+
+    public function showGame($id) { // Questa funziona mostra il singolo videogioco e i rispettivi dettagli
+        $game = Game::find($id); // La variabile e la rispettiva query vanno alla ricerca dell'id del videogioco
+        return response()->json($game); // Ritorna i risultati in formato "json"
+    }
+
+    public function toggleFavourite($userId, $gameId)
+    {
+        $user = Account::findOrFail($userId);
+        
+    
+        // Aggiungi o rimuovi il gioco dai preferiti dell'utente senza detaching
+        $user->games()->syncWithoutDetaching($gameId);
+    
+        // Verifica se il gioco è tra i preferiti dell'utente
+        $isFavourite = $user->games()->where('game_id', $gameId)->exists();
+    
+        return response()->json(['is_favourite' => $isFavourite]);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

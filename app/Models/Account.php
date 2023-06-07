@@ -2,13 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Game;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Account extends Model implements Authenticatable
 {
     use HasFactory;
+
+        public function games()
+    {
+        return $this->belongsToMany(Game::class, 'usergames')->withPivot('is_favourite');
+    }
 
     protected $fillable = [
         'name',
@@ -17,6 +23,10 @@ class Account extends Model implements Authenticatable
     ];
 
     protected $table = 'account';
+
+
+    
+    
 
     public function getAuthIdentifierName()
     {
