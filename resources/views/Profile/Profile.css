@@ -33,7 +33,6 @@
     flex-direction: column;
     width: 20%;
     height: 95%;
-    
 }
 
 .profile--sections button {
@@ -56,4 +55,46 @@
     border-left: 2px solid rgba(206, 206, 206, 0.544);
     width: 80%;
     height: 95%;
+}
+
+@media (min-width: 360px) and (max-width: 599px) { 
+
+
+    .profile--text {
+        width: 90%;
+        margin-left: 15px;
+        margin-top: 20px;
+    }
+
+    .profile--text h1 {
+        font-size: 30px;
+    }
+    
+    .profile--text p {
+        font-size: 13px;
+    }
+
+    .profile--container {
+        width: 95%;
+    }
+
+    .profile--sections {
+        border: 1px solid red;
+        justify-content: flex-start;
+        width: 20%;
+        height: 95%;
+    }
+
+    .profile--sections button {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        color: white;
+        background-color: transparent;
+        border: none;
+        margin: 15px;
+        cursor: pointer;
+    }
+    
+
 }

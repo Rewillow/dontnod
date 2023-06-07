@@ -43,3 +43,37 @@
     width: 100px;
     object-fit: contain;
 }
+
+@media (min-width: 360px) and (max-width: 599px) {
+
+    .videogames h2 {
+        font-size: 18px;
+    }
+    
+    .videogames p {
+        font-size: 12px;
+    }
+
+    .videogames--list {
+        border: 1px solid red;
+        grid-template-columns: 1fr;
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .videogames--list--icon {
+        color: white;
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+    .videogames--list button {
+        padding: 10px 20px;
+        width: 150px;
+        height: 60px;
+    }
+    
+    .videogames--list img {
+        width: 70px;
+    }
+}
