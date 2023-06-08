@@ -129,6 +129,7 @@
       transform: translateX(-100%);
       transition: all .45s;
       line-height: 24px;
+      z-index: 9999;
     }
   
     .Navbar > .nav-items > a::before {

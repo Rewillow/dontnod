@@ -35,7 +35,13 @@ const SignUp = () => {
           // Simula un ritardo di 5 secondi
           await new Promise((resolve) => setTimeout(resolve, 3000));
 
-          await axios.post('https://dontnod-production.up.railway.app/api/register', {
+          // await axios.post('https://dontnod-production.up.railway.app/api/register', {
+          //   name: name,
+          //   email: email,
+          //   password: password,
+          // });
+
+          await axios.post('http://127.0.0.1:8000/api/register', {
             name: name,
             email: email,
             password: password,

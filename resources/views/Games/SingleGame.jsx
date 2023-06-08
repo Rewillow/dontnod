@@ -187,7 +187,7 @@ const playerConfig = {controls: ['play', 'progress', 'volume', 'fullscreen']}
       <h1>Avaible on</h1>
       <div className="game--client--container">
       {game.buy.map((client, clientIndex) => (
-        <button className="game--client--container--button"><img src={client} key={clientIndex} className="single--client" /></button>
+        <button key={clientIndex} className="game--client--container--button"><img src={client} className="single--client" /></button>
       ))}
       </div>
       </div>
