@@ -1,17 +1,5 @@
 import './VideoGames.css'
-
-
-// Importo i loghi dei videogiochi
-import RememberMeLogo from '../../../../public/assets/RememberMe-Logo.png'
-import LifeIsStrangeLogo from '../../../../public/assets/LifeIsStrange-Logo.png'
-import VampyrLogo from '../../../../public/assets/Vampyr-Logo.png'
-import CaptainSpiritLogo from '../../../../public/assets/CaptainSpirit-Logo.png'
-import LifeIsStrange2Logo from '../../../../public/assets/LifeIsStrange2-Logo.png'
-import TellMweWhyLogo from '../../../../public/assets/TellMeWhy-Logo.png'
-import TwinMirrorLogo from '../../../../public/assets/TwinMirror-Logo.png'
-import GerdaLogo from '../../../../public/assets/Gerda-Logo.png'
-import BanishersLogo from '../../../../public/assets/Banishers-Logo.png'
-import HarmonyLogo from '../../../../public/assets/Harmony-Logo.png'
+import listVideogames from './listVideogames';
 
 // Importo le icone 
 import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai'
@@ -20,50 +8,6 @@ import { useState, useEffect } from 'react'
 
 const VideoGames = () => {
   
-
-  const games = [ { // Creo il mio array contenente i loghi dei videogiochi
-
-    index: 1,
-    logo: RememberMeLogo
-},
-{
-    index: 2,
-    logo: LifeIsStrangeLogo
-},
-{
-    index: 3,
-    logo: VampyrLogo
-},
-{
-    index: 4,
-    logo: CaptainSpiritLogo
-},
-{
-    index: 5,
-    logo: LifeIsStrange2Logo
-},
-{
-    index: 6,
-    logo: TellMweWhyLogo
-},
-{
-    index: 7,
-    logo: TwinMirrorLogo
-},
-{
-    index: 8,
-    logo: GerdaLogo
-},
-{
-    index: 9,
-    logo: BanishersLogo
-},
-{
-    index: 10,
-    logo: HarmonyLogo
-}
-]
-
     const [userId, setUserId] = useState(localStorage.getItem('userId'));
     const storedGameSelected = localStorage.getItem(`gameSelected_${userId}`);
     const [gameSelected, setGameSelected] = useState(
@@ -94,9 +38,9 @@ const VideoGames = () => {
           <h2>Don't Nod Videogames</h2>
           <p>These are all our video games. Which are your favorites?</p>
           <div className='videogames--list'>
-            {games.map((game) => (
-              <button key={game.index} onClick={() => handleGameSelected(game.index)} >
-                <img src={game.logo}/> {gameSelected.includes(game.index) ? ( <AiFillHeart className='videogames--list--icon' /> ) : ( <AiOutlineHeart className='videogames--list--icon' /> )}
+            {listVideogames.map( game => (
+              <button key={game.id} onClick={() => handleGameSelected(game.id)} >
+                <img src={game.path} alt={game.logo}/> {gameSelected.includes(game.id) ? ( <AiFillHeart className='videogames--list--icon' /> ) : ( <AiOutlineHeart className='videogames--list--icon' /> )}
               </button>
             ))}
           </div>

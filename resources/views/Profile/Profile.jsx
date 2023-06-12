@@ -57,7 +57,7 @@ const Profile = () => {
         </div>
         <div className='profile--container'>
             <div className='profile--sections'>
-              <button onClick={() => setSelectedTab('account')} > <MdAccountCircle className='profile--sections--icon'/> Account </button>
+              <button  onClick={() => setSelectedTab('account')} > <MdAccountCircle className='profile--sections--icon'/> Account </button>
               <button onClick={() => setSelectedTab('games')}> <IoLogoGameControllerA className='profile--sections--icon' /> Games </button>
               <button onClick={logOut}> <MdLogout className='profile--sections--icon' /> Logout </button>
             </div>
