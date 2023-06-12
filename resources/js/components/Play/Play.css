@@ -85,20 +85,14 @@
 }
 
 @media (min-width: 360px) and (max-width: 599px) {
+
     .start--logo {
-        width: 300px;
+        width: 330px;
     }
 
     .play {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         height: 150px;
         width: 150px;
-        background: linear-gradient( #009b96, #407ed7 );
-        border-radius: 50%;
-        color: white;
-        border: none;
     }
     
     .play--icon {
@@ -112,3 +106,27 @@
 
     }
 }
+
+@media (min-width: 600px) and (max-width: 799px) {
+
+    .start--logo {
+        width: 370px;
+    }
+
+    .play {
+        height: 160px;
+        width: 160px;
+    }
+    
+    .play--icon {
+        font-size: 120px;
+    }
+    
+    .play-:before, 
+    .play:after {
+        height: 160px;
+        width: 160px;
+
+    }
+}
+
