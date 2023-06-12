@@ -59,6 +59,10 @@
 
 @media (min-width: 360px) and (max-width: 599px) { 
 
+    .profile {
+        height: 150vh;
+    }
+
     .profile--text {
         width: 90%;
         margin-left: 15px;
@@ -117,7 +121,7 @@
     }
 
     .profile--sections {
-
+        width: 25%;
         height: 95%;
         align-items: center;
     }
