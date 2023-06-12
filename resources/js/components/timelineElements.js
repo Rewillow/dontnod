@@ -333,6 +333,12 @@ const timelineElements = [
         date:"December 2022",
         title:"Banishers",
         description:"Banishers, a new action-RPG developed by DON’T NOD and co-produced by Focus Entertainment, is unveiled during the Game Awards ceremony."
+    },
+    {
+        id:48,
+        date:"June 2023",
+        title: "Jusant",
+        description: "Jusant, a new action-puzzle developed by DON'T NOD, is unveiled during the Xbox Games Showcase."
     }
 
 ]
