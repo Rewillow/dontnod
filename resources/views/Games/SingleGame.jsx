@@ -15,6 +15,7 @@ import TwinMirrorWall from '../../../public/assets/TwinMirrorWall.png'
 import GerdaWall from '../../../public/assets/GerdaWall.png'
 import BanishersWall from '../../../public/assets/BanishersWall.png'
 import HarmonyWall from '../../../public/assets/HarmonyWall.png'
+import JusantWall from '../../../public/assets/JusantWall.png'
 
 import RememberMeLogo from '../../../public/assets/RememberMe-Logo.png'
 import LifeIsStrangeLogo from '../../../public/assets/LifeIsStrange-Logo.png'
@@ -26,6 +27,7 @@ import TwinMirrorLogo from '../../../public/assets/TwinMirror-Logo.png'
 import GerdaLogo from '../../../public/assets/Gerda-Logo.png'
 import BanishersLogo from '../../../public/assets/Banishers-Logo.png'
 import HarmonyLogo from '../../../public/assets/Harmony-Logo.png'
+import JusantLogo from '../../../public/assets/Jusant-Logo.png'
 
 import Steam from '../../../public/assets/Steam.svg'
 import Switch from '../../../public/assets/Switch.svg'
@@ -145,6 +147,14 @@ const SingleGame = () => {
       buy:[Steam, PS5, XboxSX, Switch],
       link:"https://youtu.be/Wv5fBHVk7Pc",
       cover: HarmonyWall
+    },
+    {
+      title: "jusant",
+      logo: JusantLogo,
+      plot: "Enjoy the meditative vibes of Jusant, a climbing action puzzler. Climb an immensely tall tower and reach uncharted heights together with your watery travel companion. Master climbing tools, traverse different biomes and piece together the tower's past.",
+      buy:[Steam, PS5, XboxSX],
+      link: "https://youtu.be/u6bhDnLBT4A",
+      cover: JusantWall
     }
 ]
 const game = gamesData.find((game) => game.title === title);

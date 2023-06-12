@@ -12,6 +12,7 @@ import TwinMirror from "../../../../public/assets/TwinMirror.png"
 import Gerda from "../../../../public/assets/Gerda.png"
 import Banishers from "../../../../public/assets/Banishers.png"
 import Harmony from "../../../../public/assets/Harmony.png"
+import Jusant from "../../../../public/assets/Jusant.png"
 
 import { useState } from 'react'
 
@@ -64,6 +65,10 @@ const Carousel = () => {
         {
             id:10,
             image: Harmony
+        },
+        {
+            id: 11,
+            image: Jusant
         }
     ]
 

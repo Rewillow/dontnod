@@ -12,6 +12,7 @@ import TM from '../../../public/assets/TM.png'
 import G from '../../../public/assets/G.png'
 import B from '../../../public/assets/B.png'
 import H from '../../../public/assets/H.png'
+import J from '../../../public/assets/J.png'
 
 import RememberMeLogo from '../../../public/assets/RememberMe-Logo.png'
 import LifeIsStrangeLogo from '../../../public/assets/LifeIsStrange-Logo.png'
@@ -23,6 +24,7 @@ import TwinMirrorLogo from '../../../public/assets/TwinMirror-Logo.png'
 import GerdaLogo from '../../../public/assets/Gerda-Logo.png'
 import BanishersLogo from '../../../public/assets/Banishers-Logo.png'
 import HarmonyLogo from '../../../public/assets/Harmony-Logo.png'
+import JusantLogo from '../../../public/assets/Jusant-Logo.png'
 
 import {GiGamepad} from 'react-icons/gi'
 import {BsSteam, BsXbox, BsNintendoSwitch, BsPlaystation} from 'react-icons/bs'
@@ -103,6 +105,13 @@ const Games = () => {
             platforms: [<BsSteam />, <BsPlaystation />, <BsXbox />, <BsNintendoSwitch />],
             path: "harmony"
         },
+        {
+            logo: JusantLogo,
+            description: "Enjoy the meditative vibes of Jusant, a climbing action puzzler. Climb an immensely tall tower and Enjoy the meditative vibes of...",
+            image: J,
+            platforms: [<BsSteam />, <BsPlaystation />, <BsXbox />],
+            path: "jusant"
+        }
     ]
 
     return (
