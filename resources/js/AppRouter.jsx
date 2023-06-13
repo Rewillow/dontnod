@@ -9,6 +9,7 @@ import SignUp from '../views/SignUp/SignUp';
 import About from '../views/About/About'
 import Play from "./components/Play/Play";
 import Profile from "../views/Profile/Profile";
+import ContactUs from "../js/components/ContactUs/ContactUs"
 
 
 const AppRouter = () => {
@@ -23,6 +24,7 @@ const AppRouter = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </div>
     )
