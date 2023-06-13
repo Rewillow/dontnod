@@ -338,7 +338,9 @@ const timelineElements = [
         id:48,
         date:"June 2023",
         title: "Jusant",
-        description: "Jusant, a new action-puzzle developed by DON'T NOD, is unveiled during the Xbox Games Showcase."
+        description: "Jusant, a new action-puzzle developed by DON'T NOD, is unveiled during the Xbox Games Showcase.",
+        path: "/games/jusant",
+        buttonText: "Discover Jusant"
     }
 
 ]
