@@ -26,7 +26,6 @@ const Footer = () => {
         <a href='/contact'><button className='footer--button--contact'>CONTACT US</button></a>
         </div>
         </div>
-
         </div>
         <div className='footer--copyright'>
         <p style={{color: `white`, textAlign: `center`}}>© 2023, All rights reserved, DON'T NOD</p>

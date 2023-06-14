@@ -18,8 +18,6 @@
     width: 130px;
 }
 
-
-
 .footer--links a {
     text-decoration: none;
     color: #f9f9f9;
@@ -89,7 +87,7 @@
  @media (min-width: 360px) and (max-width: 599px) {
 
     .footer  {
-        height: 170px;
+        height: 250px;
     }
 
     .footer--container {
@@ -106,6 +104,16 @@
     .footer--links a {
         font-size: 13px;
     }
+    
+    .footer--icons--button {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer--button--contact {
+        margin-top: 10px;
+    }
 
     .footer--single--icon {
         font-size: 30px;
@@ -116,7 +124,7 @@
  @media (min-width: 600px) and (max-width: 799px) {
 
     .footer  {
-        height: 190px;
+        height: 280px;
     }
 
     .footer--container {
@@ -132,6 +140,51 @@
 
     .footer--links a {
         font-size: 15px;
+    }
+
+    .footer--icons--button {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer--button--contact {
+        margin-top: 15px;
+    }
+
+    .footer--single--icon {
+        font-size: 32px;
+        margin: 0;
+     }
+ }
+
+ @media (min-width: 800px) and (max-width: 999px) {
+
+    .footer--container {
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .footer--icons--button {
+        justify-content: space-around;
+        width: 33%;
+    }
+
+    .footer--single--icon {
+        font-size: 32px;
+        margin: 0;
+     }
+ }
+
+ @media (min-width: 1000px) and (max-width: 1299px) {
+
+    .footer--container {
+        width: 90%;
+    }
+
+    .footer--icons--button {
+        justify-content: space-evenly;
+        width: 28%;
     }
 
     .footer--single--icon {
