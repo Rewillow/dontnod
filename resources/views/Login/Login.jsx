@@ -6,6 +6,9 @@ import { useState, useEffect } from 'react'
 import Loading from "../../../public/assets/Loading.gif"
 
 
+import { motion } from 'framer-motion'
+
+
 const Login = () => {
     const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate();
@@ -68,7 +71,7 @@ const Login = () => {
       
 
     return (
-        <form className='login'>
+        <motion.form className='login' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}> 
             <div className='login--container'>
                 <div className='login--elements'>
                    <div className='login--container--input' >
@@ -83,7 +86,7 @@ const Login = () => {
                    </div>
                 </div>
             </div>
-        </form>
+        </motion.form>
     )
 }
 

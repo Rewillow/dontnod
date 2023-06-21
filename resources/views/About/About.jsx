@@ -7,13 +7,15 @@ import timelineElements from '../../js/components/timelineElements';
 
 import {MdFoundation, MdVideogameAsset} from 'react-icons/md';
 
+import { motion } from 'framer-motion'
+
 
 const About = () => {
 
     let iconStyles = { background: "#FFFFFF", color:"#009B96"};
 
     return (
-        <div className='about'>
+        <motion.div className='about' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <div className='about--text'>
             <h1>TIME<span style={{ color: `#009B96`}}>LINE</span></h1>
             <p className='about--paragraph'>Discover the most important milestones in our history</p>
@@ -37,7 +39,7 @@ const About = () => {
                     )
                 })}
             </VerticalTimeline>
-        </div>
+        </motion.div>
     )
 }
 

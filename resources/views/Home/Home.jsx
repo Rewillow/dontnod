@@ -9,10 +9,12 @@ import DontTeam from '../../../public/assets/dontTeam.png'
 import {MdOutlineKeyboardDoubleArrowDown} from 'react-icons/md'
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 
+import { motion } from 'framer-motion'
+
 const Home = () => {
 
     return (
-        <div className='home'>
+        <motion.div className='home' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <div className='home-welcome'>
         <img src={Logo} className='home-logo'/>
         </div>
@@ -30,7 +32,7 @@ const Home = () => {
             <img src={DontTeam} className='home--about--img'/>
         </div>
         </div>
-        </div>
+        </motion.div>
     )
 }
 

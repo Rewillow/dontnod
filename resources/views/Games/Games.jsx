@@ -1,5 +1,6 @@
 import './Games.css'
 
+import { motion } from 'framer-motion'
 
 import GamesWallpaper from '../../../public/assets/GamesWallpaper.png'
 import RM from '../../../public/assets/RM.png'
@@ -115,7 +116,7 @@ const Games = () => {
     ]
 
     return (
-        <div className='games'>
+        <motion.div className='games' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <div className='games--container'>
         <img src={GamesWallpaper} className='games--container--img'/>
         <div className='games--container--text'>
@@ -143,7 +144,7 @@ const Games = () => {
         </section>
         ))}
          </div>
-        </div>
+        </motion.div>
     )
 }
 

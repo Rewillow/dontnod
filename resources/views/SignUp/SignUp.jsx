@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 import Loading from "../../../public/assets/Loading.gif"
 
+import { motion } from 'framer-motion'
+
 
 const SignUp = () => {
     const [isLoading, setIsLoading] = useState(false)
@@ -64,7 +66,7 @@ const SignUp = () => {
       
     
     return (
-        <form className='signup'>
+        <motion.form className='signup' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
             <div className='signup--container'>
                 <div className='signup--elements'>
                    <div className='signup--container--input' >
@@ -80,7 +82,7 @@ const SignUp = () => {
                    </div>
                 </div>
             </div>
-        </form>
+        </motion.form>
     )
 }
 

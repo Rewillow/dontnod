@@ -13,6 +13,8 @@ import VideoGames from '../../js/components/VideoGames/VideoGames';
 
 import './Profile.css'
 
+import { motion } from 'framer-motion'
+
 const Profile = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [selectedTab, setSelectedTab] = useState('account')
@@ -50,7 +52,7 @@ const Profile = () => {
       }
 
     return (
-        <div className='profile'>
+        <motion.div className='profile' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <div className='profile--text'>
             <h1>Account <span style={{ color: `#009B96`}}>Settings</span></h1>
             <p>Change your profile and account settings</p>
@@ -65,7 +67,7 @@ const Profile = () => {
         {selectedTab && content}
         </div>
         </div>
-        </div>
+        </motion.div>
     )
 }
 
