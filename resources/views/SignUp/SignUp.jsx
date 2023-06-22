@@ -51,8 +51,8 @@ const SignUp = () => {
 
           setIsLoading(false);
           navigate("/home");
-          window.location.reload();
           localStorage.setItem('isLoggedIn', 'true');
+          window.location.reload();
         } 
         catch (error) {
           setIsLoading(false);

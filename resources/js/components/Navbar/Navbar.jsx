@@ -6,6 +6,7 @@ import Logo from '../../../../public/assets/dontnod.svg'
 
 import {MdOutlineAccountCircle} from 'react-icons/md'
 
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
     
     
     return (
-      <div className="Navbar">
+      <motion.div className="Navbar" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <a href='/home'><img src={Logo} className="nav-logo"></img></a>
       <div className={`nav-items ${isOpen && "open"}`}>
         <a href="/home">Home</a>
@@ -49,7 +50,7 @@ const Navbar = () => {
       <div className={`nav-toggle ${isOpen && "open"}`} onClick={() => setIsOpen(!isOpen)}>
         <div className="bar"></div>
       </div>
-    </div>
+    </motion.div>
     
     );
   };

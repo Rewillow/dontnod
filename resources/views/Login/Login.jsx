@@ -54,8 +54,8 @@ const Login = () => {
     
         // Reindirizza l'utente alla pagina home
         navigate("/home");
-        window.location.reload();
         localStorage.setItem('isLoggedIn', true)
+        window.location.reload();
  
     
       } catch (error) {
