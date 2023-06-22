@@ -49,12 +49,10 @@ const Login = () => {
           email: email,
           password: password
         });
-    
         // Nascondi il messaggio di caricamento
         setIsLoading(false);
     
         // Reindirizza l'utente alla pagina home
-        
         navigate("/home");
         window.location.reload();
         localStorage.setItem('isLoggedIn', true)

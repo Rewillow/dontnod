@@ -20,13 +20,13 @@
 
 .single--icon {
     margin: 30px;
-    font-size: 120px;
+    width: 140px;
     cursor: pointer;
 }
 
 .single--icon:hover {
     transition: 0.2s ease-in-out;
-    font-size: 130px;
+    width: 155px;
 }
 
 @media (min-width: 360px) and (max-width: 599px) {

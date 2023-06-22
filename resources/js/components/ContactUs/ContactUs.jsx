@@ -3,6 +3,8 @@ import './ContactUs.css'
 
 import Loading from '../../../../public/assets/Loading.gif'
 
+import { motion } from 'framer-motion'
+
 // Questo componente permette di mettersi in contatto con l'azienda. In questo caso si tratta di un form fittizio, a cui non è stato assegnato nessun metodo di invio.
 
 const ContactUs = () => {
@@ -24,7 +26,7 @@ const ContactUs = () => {
       }, [isLoading]);
 
     return (
-     <form className='contact-us'>
+     <motion.form className='contact-us' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <div className='contact-us--container'>
        <div className='contact-us--elements'>
         <h1>Contact <span style={{ color: `#009B96`}}>Us</span></h1>
@@ -41,7 +43,7 @@ const ContactUs = () => {
         
        </div>
       </div>
-     </form>
+     </motion.form>
     ) 
 }
 
