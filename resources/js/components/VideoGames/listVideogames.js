@@ -51,6 +51,11 @@ const listVideogames = [
         id: 10,
         logo: "HarmonyLogo",
         path: '/assets/Harmony-Logo.png'
+    },
+    {
+        id: 11,
+        logo: "JusantLogo",
+        path: '/assets/Jusant-Logo.png'
     }
 ]
 
