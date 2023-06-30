@@ -40,15 +40,15 @@ const Login = () => {
     
         // Esegui la chiamata API per effettuare il login
         
-        // await axios.post('https://dontnod-production.up.railway.app/api/login', {
-        //   email: email,
-        //   password: password
-        // });
-
-        await axios.post('http://127.0.0.1:8000/api/login', {
+        await axios.post('https://dontnod-production.up.railway.app/api/login', {
           email: email,
           password: password
         });
+
+        // await axios.post('http://127.0.0.1:8000/api/login', {
+        //   email: email,
+        //   password: password
+        // });
         // Nascondi il messaggio di caricamento
         setIsLoading(false);
     

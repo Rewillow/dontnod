@@ -25,8 +25,8 @@ const Profile = () => {
     const logOut = async (event) => {
         event.preventDefault();
         try {
-          // await axios.post('https://dontnod-production.up.railway.app/api/logout');
-          await axios.post('http://127.0.0.1:8000/api/logout');
+          await axios.post('https://dontnod-production.up.railway.app/api/logout');
+          // await axios.post('http://127.0.0.1:8000/api/logout');
   
           localStorage.setItem('isLoggedIn', 'false');
           localStorage.removeItem('userId')
