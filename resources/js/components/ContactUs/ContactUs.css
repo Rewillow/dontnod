@@ -117,7 +117,9 @@
 @media (min-width:360px) and (max-width:599px) {
     
     .contact-us {
-        height: 105vh;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        height: auto;
     }
 
     .contact-us--elements h1 {
@@ -243,7 +245,7 @@
         font-size: 60px;
     }
     
-    
+
     .contact-us--elements p {
         font-size: 19px;
     }
