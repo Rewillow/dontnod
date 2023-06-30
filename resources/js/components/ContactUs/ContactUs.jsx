@@ -40,7 +40,7 @@ const ContactUs = () => {
             <textarea type='text' placeholder='Write what you want to tell'></textarea>   
         </div>
         <button className='contact-us--button' onClick={handleSend}>SEND {isLoading && <img src={Loading} className='contact-us--loading--icon'/>}</button>
-        
+        <h5>*The form is for illustration only</h5>
        </div>
       </div>
      </motion.form>

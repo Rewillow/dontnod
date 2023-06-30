@@ -107,7 +107,15 @@
     margin-left: 10px;
 }
 
+.contact-us h5 {
+    color: white;
+    margin-top: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
 @media (min-width:360px) and (max-width:599px) {
+    
     .contact-us {
         height: 105vh;
     }
@@ -152,33 +160,82 @@
         margin-top: 20px;
         width: 70%;
     }
+
+    .contact-us h5 {
+        font-size: 12px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
 }
 
 @media (min-width: 600px) and (max-width:799px) { 
+
+    .contact-us {
+        height: 105vh;
+    }
     
     .contact-us--button {
         margin-top: 10px;
         margin-bottom: 20px;
         width: 70%;
     }
+
+    .contact-us--input input {
+        padding-left: 5px;
+        font-size: 12px;
+    }
+
+    .contact-us--input input::placeholder {
+        padding-left: 2px;
+    }
+
+    .contact-us--input textarea {
+        padding-left: 5px;
+        font-size: 12px;
+    }
+    
+    .contact-us--input textarea::placeholder {
+        padding-left: 2px;
+    }
+
+    .contact-us h5 {
+        margin-top: 10px;
+    }
 }
 
 @media (min-width: 800px) and (max-width:999px) { 
+
+    .contact-us {
+        height: 105vh;
+    }
     
     .contact-us--button {
         margin-top: 10px;
         margin-bottom: 20px;
         width: 60%;
     }
+
+    .contact-us h5 {
+       margin-top: 10px;
+    }
 }
 
 @media (min-width: 1000px) and (max-width:1299px) { 
+
+    .contact-us {
+        height: 110vh;
+    }
     
     .contact-us--button {
         margin-top: 10px;
         margin-bottom: 20px;
         width: 50%;
     }
+
+    .contact-us h5 {
+        margin-top: 10px;
+    }
+
 }
 
 @media (min-width: 1540px) {
