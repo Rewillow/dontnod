@@ -1,26 +1,29 @@
-import './Home.css'
+import './Home.css' // Importo il foglio di stile
 
-import Platform from '../../js/components/Platforms/Platform'
-import Carousel from '../../js/components/Carousel/Carousel'
+import Platform from '../../js/components/Platforms/Platform' // Importo il componente Platform 
+import Carousel from '../../js/components/Carousel/Carousel' // Importo il componente Carousel
 
-import Logo from '../../../public/assets/dontnod.png'
-import DontTeam from '../../../public/assets/dontTeam.png'
+import Logo from '../../../public/assets/dontnod.png' // Importo il logo della Don't Nod
+import DontTeam from '../../../public/assets/dontTeam.png' // Importo l'immagine del team della Don't Nod
 
-import {MdOutlineKeyboardDoubleArrowDown} from 'react-icons/md'
-import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
+import {MdOutlineKeyboardDoubleArrowDown} from 'react-icons/md' // Importo l'icona dalla libreria React Icons
+import {HiOutlineArrowNarrowRight} from 'react-icons/hi' // Importo l'icona dalla libreria React Icons
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion' // Importo il componente per il funzionamento della transizione da pagina a pagina 
 
 const Home = () => {
 
     return (
+        // Specifico il tipo di transizione impostando i valori di "inizial, animate e exit"
         <motion.div className='home' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <div className='home-welcome'>
         <img src={Logo} className='home-logo'/>
         </div>
         <h1 className='home--text--discover'>Discover our world</h1>
         <div className='home--arrow--down'><MdOutlineKeyboardDoubleArrowDown /></div>
-            <Platform />
+        {/* Inserisco il componente "Platform" */}
+            <Platform /> 
+        {/* Inserisco il componente "Carousel" */}
             <Carousel /> 
         <div className='home--about'>
         <div className='home--about--text'>
