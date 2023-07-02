@@ -11,6 +11,7 @@ import {IoLogoGameControllerA} from 'react-icons/io'
 import Account from '../../js/components/Account/Account';
 import VideoGames from '../../js/components/VideoGames/VideoGames';
 
+
 import './Profile.css'
 
 import { motion } from 'framer-motion'
