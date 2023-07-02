@@ -1,40 +1,40 @@
-import './Games.css'
+import './Games.css' // Importo il file di stile
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion' // Importo il componente per il funzionamento della transizione da pagina a pagina 
 
-import GamesWallpaper from '../../../public/assets/GamesWallpaper.png'
-import RM from '../../../public/assets/RM.png'
-import LIF from '../../../public/assets/LIF.png'
-import VAMP from '../../../public/assets/VAMP.png'
-import CP from '../../../public/assets/CP.png'
-import LIF2 from '../../../public/assets/LIF2.png'
-import TMW from '../../../public/assets/TMW.png'
-import TM from '../../../public/assets/TM.png'
-import G from '../../../public/assets/G.png'
-import B from '../../../public/assets/B.png'
-import H from '../../../public/assets/H.png'
-import J from '../../../public/assets/J.png'
+import GamesWallpaper from '../../../public/assets/GamesWallpaper.png' // Importo il wallpaper della sezione Games
+import RM from '../../../public/assets/RM.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import LIF from '../../../public/assets/LIF.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import VAMP from '../../../public/assets/VAMP.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import CP from '../../../public/assets/CP.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import LIF2 from '../../../public/assets/LIF2.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import TMW from '../../../public/assets/TMW.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import TM from '../../../public/assets/TM.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import G from '../../../public/assets/G.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import B from '../../../public/assets/B.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import H from '../../../public/assets/H.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import J from '../../../public/assets/J.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
 
-import RememberMeLogo from '../../../public/assets/RememberMe-Logo.png'
-import LifeIsStrangeLogo from '../../../public/assets/LifeIsStrange-Logo.png'
-import VampyrLogo from '../../../public/assets/Vampyr-Logo.png'
-import CaptainSpiritLogo from '../../../public/assets/CaptainSpirit-Logo.png'
-import LifeIsStrange2Logo from '../../../public/assets/LifeIsStrange2-Logo.png'
-import TellMweWhyLogo from '../../../public/assets/TellMeWhy-Logo.png'
-import TwinMirrorLogo from '../../../public/assets/TwinMirror-Logo.png'
-import GerdaLogo from '../../../public/assets/Gerda-Logo.png'
-import BanishersLogo from '../../../public/assets/Banishers-Logo.png'
-import HarmonyLogo from '../../../public/assets/Harmony-Logo.png'
-import JusantLogo from '../../../public/assets/Jusant-Logo.png'
+import RememberMeLogo from '../../../public/assets/RememberMe-Logo.png' // Importo il logo di ogni singolo videogioco
+import LifeIsStrangeLogo from '../../../public/assets/LifeIsStrange-Logo.png' // Importo il logo di ogni singolo videogioco
+import VampyrLogo from '../../../public/assets/Vampyr-Logo.png' // Importo il logo di ogni singolo videogioco
+import CaptainSpiritLogo from '../../../public/assets/CaptainSpirit-Logo.png' // Importo il logo di ogni singolo videogioco
+import LifeIsStrange2Logo from '../../../public/assets/LifeIsStrange2-Logo.png' // Importo il logo di ogni singolo videogioco
+import TellMweWhyLogo from '../../../public/assets/TellMeWhy-Logo.png' // Importo il logo di ogni singolo videogioco
+import TwinMirrorLogo from '../../../public/assets/TwinMirror-Logo.png' // Importo il logo di ogni singolo videogioco
+import GerdaLogo from '../../../public/assets/Gerda-Logo.png' // Importo il logo di ogni singolo videogioco
+import BanishersLogo from '../../../public/assets/Banishers-Logo.png' // Importo il logo di ogni singolo videogioco
+import HarmonyLogo from '../../../public/assets/Harmony-Logo.png' // Importo il logo di ogni singolo videogioco
+import JusantLogo from '../../../public/assets/Jusant-Logo.png' // Importo il logo di ogni singolo videogioco
 
-import {GiGamepad} from 'react-icons/gi'
-import {BsSteam, BsXbox, BsNintendoSwitch, BsPlaystation} from 'react-icons/bs'
-import {SiEpicgames} from 'react-icons/si'
-
-import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
+import {GiGamepad} from 'react-icons/gi' // Importo l'icona dalla libreria React Icons
+import {BsSteam, BsXbox, BsNintendoSwitch, BsPlaystation} from 'react-icons/bs' // Importo le icone dalla libreria React Icons
+import {SiEpicgames} from 'react-icons/si' // Importo l'icona dalla libreria React Icons
+import {HiOutlineArrowNarrowRight} from 'react-icons/hi' // Importo l'icona dalla libreria React Icons
 
 const Games = () => {
 
+    // Creo il componente "titles" caratterizzato da un array di elementi, le cui informazioni sono relativi a ogni singolo videogioco
     const titles = [
         {   
             logo: RememberMeLogo,
@@ -116,6 +116,7 @@ const Games = () => {
     ]
 
     return (
+        // Specifico il tipo di transizione impostando i valori di "inizial, animate e exit"
         <motion.div className='games' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <div className='games--container'>
         <img src={GamesWallpaper} className='games--container--img'/>
@@ -126,7 +127,7 @@ const Games = () => {
         <div className='games--container--gamepad'>
             <GiGamepad className='games--container--gamepad--icon'/>
         </div>
-        {titles.map((title, index) => (
+        {titles.map((title, index) => ( // Attraverso il metodo .map, richiamo ogni singolo elemento dell'array
         <section key={index} className='games--container--rm'>
         <div className='games--container--rm--img'>
         <img src={title.image} className='remember--me' alt="Game Image" />
@@ -135,7 +136,7 @@ const Games = () => {
         <img src={title.logo} className='games--container--logo' alt='Logo Image' />
         <p>{title.description}</p>
         <div className='games--container--platforms--icons'>
-        {title.platforms.map((platform, platformIndex) => (
+        {title.platforms.map((platform, platformIndex) => ( // Attraverso il metodo .map, richiamo ogni singolo elemento dell'array
         <span key={platformIndex} className='games--container--platforms--single--icon'>{platform}</span>
         ))}
         </div>
