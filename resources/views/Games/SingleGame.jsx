@@ -1,66 +1,65 @@
-import { useParams} from "react-router-dom";
-import { useState } from "react";
-import ReactPlayer from 'react-player'
+import { useParams} from "react-router-dom"; // Importo la funzione useParams 
+import { useState } from "react"; // Importo la funzione useState
+import ReactPlayer from 'react-player' 
 
 import './SingleGame.css'
 
+import RememberMeWall from '../../../public/assets/RememberMeWall.png' // Importo il wallpaper di ogni singolo videogioco
+import LifeIsStrangeWall from '../../../public/assets/LifeIsStrangeWall.png' // Importo il wallpaper di ogni singolo videogioco
+import VampyrWall from '../../../public/assets/VampyrWall.png' // Importo il wallpaper di ogni singolo videogioco
+import CaptainSpiritWall from '../../../public/assets/CaptainSpiritWall.png' // Importo il wallpaper di ogni singolo videogioco
+import LifeIsStrange2Wall from '../../../public/assets/LifeIsStrange2Wall.png' // Importo il wallpaper di ogni singolo videogioco
+import TellMeWhyWall from '../../../public/assets/TellMeWhyWall.png' // Importo il wallpaper di ogni singolo videogioco
+import TwinMirrorWall from '../../../public/assets/TwinMirrorWall.png' // Importo il wallpaper di ogni singolo videogioco
+import GerdaWall from '../../../public/assets/GerdaWall.png' // Importo il wallpaper di ogni singolo videogioco
+import BanishersWall from '../../../public/assets/BanishersWall.png' // Importo il wallpaper di ogni singolo videogioco
+import HarmonyWall from '../../../public/assets/HarmonyWall.png' // Importo il wallpaper di ogni singolo videogioco
+import JusantWall from '../../../public/assets/JusantWall.png' // Importo il wallpaper di ogni singolo videogioco
 
-import RememberMeWall from '../../../public/assets/RememberMeWall.png'
-import LifeIsStrangeWall from '../../../public/assets/LifeIsStrangeWall.png'
-import VampyrWall from '../../../public/assets/VampyrWall.png'
-import CaptainSpiritWall from '../../../public/assets/CaptainSpiritWall.png'
-import LifeIsStrange2Wall from '../../../public/assets/LifeIsStrange2Wall.png'
-import TellMeWhyWall from '../../../public/assets/TellMeWhyWall.png'
-import TwinMirrorWall from '../../../public/assets/TwinMirrorWall.png'
-import GerdaWall from '../../../public/assets/GerdaWall.png'
-import BanishersWall from '../../../public/assets/BanishersWall.png'
-import HarmonyWall from '../../../public/assets/HarmonyWall.png'
-import JusantWall from '../../../public/assets/JusantWall.png'
+import RememberMeLogo from '../../../public/assets/RememberMe-Logo.png' // Importo il logo di ogni singolo videogioco
+import LifeIsStrangeLogo from '../../../public/assets/LifeIsStrange-Logo.png' // Importo il logo di ogni singolo videogioco
+import VampyrLogo from '../../../public/assets/Vampyr-Logo.png' // Importo il logo di ogni singolo videogioco
+import CaptainSpiritLogo from '../../../public/assets/CaptainSpirit-Logo.png' // Importo il logo di ogni singolo videogioco
+import LifeIsStrange2Logo from '../../../public/assets/LifeIsStrange2-Logo.png' // Importo il logo di ogni singolo videogioco
+import TellMweWhyLogo from '../../../public/assets/TellMeWhy-Logo.png' // Importo il logo di ogni singolo videogioco
+import TwinMirrorLogo from '../../../public/assets/TwinMirror-Logo.png' // Importo il logo di ogni singolo videogioco
+import GerdaLogo from '../../../public/assets/Gerda-Logo.png' // Importo il logo di ogni singolo videogioco
+import BanishersLogo from '../../../public/assets/Banishers-Logo.png' // Importo il logo di ogni singolo videogioco
+import HarmonyLogo from '../../../public/assets/Harmony-Logo.png' // Importo il logo di ogni singolo videogioco
+import JusantLogo from '../../../public/assets/Jusant-Logo.png' // Importo il logo di ogni singolo videogioco
 
-import RememberMeLogo from '../../../public/assets/RememberMe-Logo.png'
-import LifeIsStrangeLogo from '../../../public/assets/LifeIsStrange-Logo.png'
-import VampyrLogo from '../../../public/assets/Vampyr-Logo.png'
-import CaptainSpiritLogo from '../../../public/assets/CaptainSpirit-Logo.png'
-import LifeIsStrange2Logo from '../../../public/assets/LifeIsStrange2-Logo.png'
-import TellMweWhyLogo from '../../../public/assets/TellMeWhy-Logo.png'
-import TwinMirrorLogo from '../../../public/assets/TwinMirror-Logo.png'
-import GerdaLogo from '../../../public/assets/Gerda-Logo.png'
-import BanishersLogo from '../../../public/assets/Banishers-Logo.png'
-import HarmonyLogo from '../../../public/assets/Harmony-Logo.png'
-import JusantLogo from '../../../public/assets/Jusant-Logo.png'
+import Steam from '../../../public/assets/Steam.svg' // Importo il logo di ogni singola piattaforma
+import Switch from '../../../public/assets/Switch.svg' // Importo il logo di ogni singola piattaforma
+import Xbox360 from '../../../public/assets/Xbox360.svg' // Importo il logo di ogni singola piattaforma
+import PS4 from '../../../public/assets/PS4.svg' // Importo il logo di ogni singola piattaforma
+import XboxOne from '../../../public/assets/XboxOne.svg' // Importo il logo di ogni singola piattaforma
+import EpicGames from '../../../public/assets/EpicGames.svg' // Importo il logo di ogni singola piattaforma
+import PS5 from '../../../public/assets/PS5.svg' // Importo il logo di ogni singola piattaforma
+import XboxSX from '../../../public/assets/XboxSX.svg' // Importo il logo di ogni singola piattaforma
 
-import Steam from '../../../public/assets/Steam.svg'
-import Switch from '../../../public/assets/Switch.svg'
-import Xbox360 from '../../../public/assets/Xbox360.svg'
-import PS4 from '../../../public/assets/PS4.svg'
-import XboxOne from '../../../public/assets/XboxOne.svg'
-import EpicGames from '../../../public/assets/EpicGames.svg'
-import PS5 from '../../../public/assets/PS5.svg'
-import XboxSX from '../../../public/assets/XboxSX.svg'
+import BritishAcademy from '../../../public/assets/BritishAcademy.png' // Importo il logo dei premi
+import HallOfFame from '../../../public/assets/HallOfFame.png' // Importo il logo dei premi
+import PingAwards from '../../../public/assets/PingAwards.png' // Importo il logo dei premi
+import Recommended from '../../../public/assets/Recommended.png' // Importo il logo dei premi
+import PingAwards2 from '../../../public/assets/PingAwards2.png' // Importo il logo dei premi
+import GoldenJoystick from '../../../public/assets/GoldenJoystick.png' // Importo il logo dei premi
+import BestInteractive from '../../../public/assets/BestInteractive.png' // Importo il logo dei premi
+import GoldenJoystick2 from '../../../public/assets/GoldenJoystick2.png' // Importo il logo dei premi
+import BestAdventure from '../../../public/assets/BestAdventure.png' // Importo il logo dei premi
+import BaftaWinner from '../../../public/assets/BaftaWinner.png' // Importo il logo dei premi
+import Pegases2021 from '../../../public/assets/Pegases2021.png' // Importo il logo dei premi
+import GamesCom2020 from '../../../public/assets/GamesCom2020.png' // Importo il logo dei premi
+import GaymingAward from '../../../public/assets/GaymingAward.png' // Importo il logo dei premi
+import GamesForImpact from '../../../public/assets/GamesForImpact.jpg' // Importo il logo dei premi
 
-import BritishAcademy from '../../../public/assets/BritishAcademy.png'
-import HallOfFame from '../../../public/assets/HallOfFame.png'
-import PingAwards from '../../../public/assets/PingAwards.png'
-import Recommended from '../../../public/assets/Recommended.png'
-import PingAwards2 from '../../../public/assets/PingAwards2.png'
-import GoldenJoystick from '../../../public/assets/GoldenJoystick.png'
-import BestInteractive from '../../../public/assets/BestInteractive.png'
-import GoldenJoystick2 from '../../../public/assets/GoldenJoystick2.png'
-import BestAdventure from '../../../public/assets/BestAdventure.png'
-import BaftaWinner from '../../../public/assets/BaftaWinner.png'
-import Pegases2021 from '../../../public/assets/Pegases2021.png'
-import GamesCom2020 from '../../../public/assets/GamesCom2020.png'
-import GaymingAward from '../../../public/assets/GaymingAward.png'
-import GamesForImpact from '../../../public/assets/GamesForImpact.jpg'
-
-
-
-import {BsYoutube} from 'react-icons/bs'
-import {AiOutlineClose} from 'react-icons/ai'
+import {BsYoutube} from 'react-icons/bs' // Importo l'icona dalla libreria React Icons
+import {AiOutlineClose} from 'react-icons/ai' // Importo l'icona dalla libreria React Icons
 
 const SingleGame = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { title } = useParams();
+  const [isOpen, setIsOpen] = useState(false); // Creo la costante utilizzando useState e impostando uno stato iniziale uguale a "false"
+  const { title } = useParams(); // Creo la costante utilizzando l'hook useParams
+
+  // Creo il componente "gamesData" caratterizzato da un array di elementi, le cui informazioni sono relativi a ogni singolo videogioco
   const gamesData = [
 
     {
@@ -157,17 +156,16 @@ const SingleGame = () => {
       cover: JusantWall
     }
 ]
-const game = gamesData.find((game) => game.title === title);
+const game = gamesData.find((game) => game.title === title); // Creo il componente "game" facendo riferimento all'array gamesData a cui applico il meoto ".find", che restituisce il primo elemento nella matrice fornita che soddisfa i requisiti. In questo caso viene restituito l'elemento corrispondente alla voce "title" a cui collego il "title" di useParams.
 
-const watchVideo = () => {
+const watchVideo = () => { // Imposto il componente specificando il valore di "setIsOpen" in modo tale da aprire il video
    setIsOpen(true)
 }
-
-const closeVideo = () => {
+const closeVideo = () => { // Imposto il componente specificando il valore di "setIsOpen" in modo tale da chiudere il video
   setIsOpen(false)
 }
 
-const playerConfig = {controls: ['play', 'progress', 'volume', 'fullscreen']}
+const playerConfig = {controls: ['play', 'progress', 'volume', 'fullscreen']} // Imposto, tramite la costante, quali controlli voglio visualizzare nel player di Youtube
 
   return (
     <div className="game">
@@ -178,15 +176,17 @@ const playerConfig = {controls: ['play', 'progress', 'volume', 'fullscreen']}
         <h3>{game.plot}</h3>
       </div>
       <div className="game--watch--video">
-      {!isOpen && (
+      {!isOpen && ( // Se il video non è aperto, viene mostrata l'icona e al click richiamato il componente "watchVideo"
         <button className="game--youtube--button" onClick={watchVideo}><BsYoutube /></button>
       )}
-      {isOpen && (
+      {isOpen && ( // Se il video è aperto, viene mostrato il plater e al click sull'apposita icona, chiuso il video grazie al richiamo del componente "closeVideo"
         <div className="youtube--video">
         <div className="youtube--video--container">
         <div className="youtube--wrapper">
-        <button onClick={closeVideo} className="game--close--video"><AiOutlineClose /></button>
-        <ReactPlayer url={game.link} width="100%" height="100%" controls={playerConfig} />
+        {/* Su onClick richiamo il componente "closeVideo" */}
+        <button onClick={closeVideo} className="game--close--video"><AiOutlineClose /></button> 
+        {/* Specifico le caratteristiche che deve avere il Player di Youtube */}
+        <ReactPlayer url={game.link} width="100%" height="100%" controls={playerConfig} /> 
         </div>
         </div>
         </div>
@@ -196,14 +196,14 @@ const playerConfig = {controls: ['play', 'progress', 'volume', 'fullscreen']}
       <div className="game--client">
       <h1>Avaible on</h1>
       <div className="game--client--container">
-      {game.buy.map((client, clientIndex) => (
+      {game.buy.map((client, clientIndex) => ( // Attraverso il metodo .map, richiamo ogni singolo elemento dell'array
         <button key={clientIndex} className="game--client--container--button"><img src={client} className="single--client" /></button>
       ))}
       </div>
       </div>
       <div className="game--awards"> 
       <div className="game--awards--list">
-      {game.awards && game.awards.map((award, awardIndex) => (
+      {game.awards && game.awards.map((award, awardIndex) => ( // Attraverso il metodo .map, richiamo ogni singolo elemento dell'array
         <img src={award} key={awardIndex} className="game--prize" />
       ))}
       </div>

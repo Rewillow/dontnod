@@ -3,17 +3,17 @@ import './Games.css' // Importo il file di stile
 import { motion } from 'framer-motion' // Importo il componente per il funzionamento della transizione da pagina a pagina 
 
 import GamesWallpaper from '../../../public/assets/GamesWallpaper.png' // Importo il wallpaper della sezione Games
-import RM from '../../../public/assets/RM.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import LIF from '../../../public/assets/LIF.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import VAMP from '../../../public/assets/VAMP.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import CP from '../../../public/assets/CP.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import LIF2 from '../../../public/assets/LIF2.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import TMW from '../../../public/assets/TMW.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import TM from '../../../public/assets/TM.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import G from '../../../public/assets/G.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import B from '../../../public/assets/B.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import H from '../../../public/assets/H.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
-import J from '../../../public/assets/J.png' // Importo il wallpaper visibile nelle specifiche di ogni videogioco
+import RM from '../../../public/assets/RM.png' // Importo la copertina di ogni videogioco
+import LIF from '../../../public/assets/LIF.png' // Importo la copertina di ogni videogioco
+import VAMP from '../../../public/assets/VAMP.png' // Importo la copertina di ogni videogioco
+import CP from '../../../public/assets/CP.png' // Importo la copertina di ogni videogioco
+import LIF2 from '../../../public/assets/LIF2.png' // Importo la copertina di ogni videogioco
+import TMW from '../../../public/assets/TMW.png' // Importo la copertina di ogni videogioco
+import TM from '../../../public/assets/TM.png' // Importo la copertina di ogni videogioco
+import G from '../../../public/assets/G.png' // Importo la copertina di ogni videogioco
+import B from '../../../public/assets/B.png' // Importo la copertina di ogni videogioco
+import H from '../../../public/assets/H.png' // Importo la copertina di ogni videogioco
+import J from '../../../public/assets/J.png' // Importo la copertina di ogni videogioco
 
 import RememberMeLogo from '../../../public/assets/RememberMe-Logo.png' // Importo il logo di ogni singolo videogioco
 import LifeIsStrangeLogo from '../../../public/assets/LifeIsStrange-Logo.png' // Importo il logo di ogni singolo videogioco
