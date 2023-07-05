@@ -1,30 +1,30 @@
-import './Carousel.css'
+import './Carousel.css' // Importo il file di stile
 
-import CarouselItem from "./CarouselItem"
+import CarouselItem from "./CarouselItem" // Importo il componente alla quale passo come prop "item"
 
-import Rememberme from "../../../../public/assets/RememberMe.png"
-import LifeIsStrange from "../../../../public/assets/LifeIsStrange.png"
-import Vampyr from "../../../../public/assets/Vampyr.png"
-import CaptainSpirit from "../../../../public/assets/CaptainSpirit.png"
-import LifeIsStrange2 from "../../../../public/assets/LifeIsStrange2.png"
-import TellMeWhy from "../../../../public/assets/TellMeWhy.png"
-import TwinMirror from "../../../../public/assets/TwinMirror.png"
-import Gerda from "../../../../public/assets/Gerda.png"
-import Banishers from "../../../../public/assets/Banishers.png"
-import Harmony from "../../../../public/assets/Harmony.png"
-import Jusant from "../../../../public/assets/Jusant.png"
+import Rememberme from "../../../../public/assets/RememberMe.png" // Importo l'immagine per lo Slider
+import LifeIsStrange from "../../../../public/assets/LifeIsStrange.png" // Importo l'immagine per lo Slider
+import Vampyr from "../../../../public/assets/Vampyr.png" // Importo l'immagine per lo Slider
+import CaptainSpirit from "../../../../public/assets/CaptainSpirit.png" // Importo l'immagine per lo Slider
+import LifeIsStrange2 from "../../../../public/assets/LifeIsStrange2.png" // Importo l'immagine per lo Slider
+import TellMeWhy from "../../../../public/assets/TellMeWhy.png" // Importo l'immagine per lo Slider
+import TwinMirror from "../../../../public/assets/TwinMirror.png" // Importo l'immagine per lo Slider
+import Gerda from "../../../../public/assets/Gerda.png" // Importo l'immagine per lo Slider
+import Banishers from "../../../../public/assets/Banishers.png" // Importo l'immagine per lo Slider
+import Harmony from "../../../../public/assets/Harmony.png" // Importo l'immagine per lo Slider
+import Jusant from "../../../../public/assets/Jusant.png" // Importo l'immagine per lo Slider
 
-import { useState } from 'react'
+import { useState } from 'react' // Importo useState
 
-import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai'
-import {IoMdRadioButtonOn} from 'react-icons/io'
+import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai' // Importo le icone dalla libreria React-Icons
+import {IoMdRadioButtonOn} from 'react-icons/io' // Importo l'icona dalla libreria React-Icons
 
 
 const Carousel = () => {
 
     const [activeIndex, setActiveIndex] = useState(0); // Essendo impostato a 0, indica il primo elemento dell'array
 
-    const items = [ // Creo un array che conterrà tutte le varie immagini
+    const items = [ // Creo un array che contiene tutte le varie immagini dello slider
         {
             id:1,
             image: Rememberme
@@ -72,10 +72,10 @@ const Carousel = () => {
         }
     ]
 
-    const updateIndex = (newIndex) => {
-        if (newIndex < 0) {
+    const updateIndex = (newIndex) => { // Creo la costante che gestisce l'avanzamento dello slider
+        if (newIndex < 0) { // Se newIndex è minore di 0, allora assumerà il valore di 0
             newIndex = 0;
-        } else if (newIndex >= items.length) {
+        } else if (newIndex >= items.length) { // Se newIndex ha un valore maggiore/uguale alla lunghezza dell'array, avrà il valore di 0. Questo viene stabilito per fare in modo che ritorni al punto di partenza e non rimanga bloccato alla fine.
             newIndex = 0;
         } 
 
@@ -87,18 +87,20 @@ const Carousel = () => {
         <h1 style={{ color: `white` }}>OUR <span style={{ color: `#009B96` }}>TITLES</span></h1>
         <h3 style={{ color: `white`, fontWeight: `300`, textAlign: `center` }}>These are the games created by our team!</h3>
         <div className='inner' style={{ transform: `translateX(${-activeIndex * 100}%)` }}>
-            {items.map((item) => {
+            {items.map((item) => { // Attraverso il metodo .map, richiamo ogni singolo elemento dell'array
                 return <CarouselItem item={item} key={item.id}/>
             })}
         </div>
         <div className='carousel-buttons'>
+            {/* Sottranedo -1 ad activeIndex, viene permesso di ritornare indietro */}
             <button className='button-arrow' onClick={() => {(updateIndex(activeIndex - 1))}}>
                 <AiOutlineArrowLeft />
             </button>
             <div className='indicators'>
-            {items.map((item, index) => {
+            {items.map((item, index) => { // Attraverso il metodo .map, richiamo ogni singolo elemento dell'array
                 return (
                 <button className='indicator-buttons' onClick={() => {updateIndex(index)}}>
+                    {/* Qui si specifica che l'immagine corrispondente al pallino verrà visualizzato colorato, altrimenti no */}
                     <span className={`indicator-symbol ${index === activeIndex ? "indicator-symbol-active" : "indicator-symbol"}`}>
                         <IoMdRadioButtonOn />
                     </span>
@@ -106,7 +108,8 @@ const Carousel = () => {
                 )
             })}
             </div>
-            <button className='button-arrow' onClick={() => {(updateIndex(activeIndex + 1))}}>
+            {/* Aggiungendo +1 ad activeIndex, viene permesso l'avanzamento */}
+            <button className='button-arrow' onClick={() => {(updateIndex(activeIndex + 1))}}> 
                 <AiOutlineArrowRight />
             </button>
         </div>
