@@ -1,16 +1,18 @@
-import {Routes, Route, useLocation} from 'react-router-dom'
+// QUesto componente è simile ad AppRouter, con la sola differenza che è stato inserito il componente per le animazioni tra le pagine che avvolge Routes e Route
 
-import Play from '../Play/Play'
-import Home from '../../../views/Home/Home'
-import Games from '../../../views/Games/Games'
-import SingleGame from '../../../views/Games/SingleGame'
-import About from '../../../views/About/About'
-import Login from '../../../views/Login/Login'
-import SignUp from '../../../views/SignUp/SignUp'
-import Profile from '../../../views/Profile/Profile'
-import ContactUs from '../ContactUs/ContactUs'
+import {Routes, Route, useLocation} from 'react-router-dom' // Import Routes, Route e useLocation
 
-import {AnimatePresence} from 'framer-motion'
+import Play from '../Play/Play' // Importo il componente-rotta
+import Home from '../../../views/Home/Home' // Importo il componente-rotta
+import Games from '../../../views/Games/Games' // Importo il componente-rotta
+import SingleGame from '../../../views/Games/SingleGame' // Importo il componente-rotta
+import About from '../../../views/About/About' // Importo il componente-rotta
+import Login from '../../../views/Login/Login' // Importo il componente-rotta
+import SignUp from '../../../views/SignUp/SignUp' // Importo il componente-rotta
+import Profile from '../../../views/Profile/Profile' // Importo il componente-rotta
+import ContactUs from '../ContactUs/ContactUs' // Importo il componente-rotta
+
+import {AnimatePresence} from 'framer-motion' // Importo "AnimatePresence" della libreria "framer-motion", dentro la quale avvolgo le rotte.
 
 
 
