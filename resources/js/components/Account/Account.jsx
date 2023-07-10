@@ -13,8 +13,8 @@ const Account = () => {
         const fetchUserDetails = async () => {
             try {
                 // Viene effettuata la chiamata API
-                const response = await axios.get('https://dontnod-production.up.railway.app/api/user');
-                // const response = await axios.get('http://127.0.0.1:8000/api/user');
+                // const response = await axios.get('https://dontnod-production.up.railway.app/api/user');
+                const response = await axios.get('http://127.0.0.1:8000/api/user');
                 setUser(response.data) // Imposto il valore della costante inserendo i valori di "data" recuperati dalla chiamata API
                 const userId = response.data.id; // Stabilisco il valore della costante "userId" ricavando i dati dalla chiamata API e nello specifico il valore di "id"
                 localStorage.setItem('userId', userId); // Nel localStorage imposto il valore dell'id

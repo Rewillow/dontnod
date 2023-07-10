@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Http\Middleware\Authenticate;
 use App\Models\Account;
 
 /*
@@ -20,15 +21,20 @@ use App\Models\Account;
 //     return $request->user();
 // });
 
-Route::post('/register', [AccountController::class, 'register']); // Per registrarsi al sito
+Route::post('/register', [AccountController::class, 'register']);// Per registrarsi al sito
 
 Route::post('/login', [AccountController::class, 'login']); // Per effettuare il Login
 
-Route::post('/logout', [AccountController::class, 'logout']); // Per effettuare il Logout
+Route::post('/logout', [AccountController::class, 'logout'])->middleware(Authenticate::class); // Per effettuare il Logout
 
-Route::get('/checkLog', [AccountController::class, 'checkLog']); // Per controllare se l'utente è loggato o no
+Route::get('/user', [AccountController::class, 'user'])->middleware(Authenticate::class); // Per recuperare i dati relativi all'account dell'utente
 
-Route::get('/user', [AccountController::class, 'user']); // Per recuperare i dati relativi all'account dell'utente
+
+
+
+
+
+// Route::get('/checkLog', [AccountController::class, 'checkLog']); // Per controllare se l'utente è loggato o no
 
 
 

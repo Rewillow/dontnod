@@ -37,16 +37,16 @@ const Login = () => {
         // Viene simulato un ritardo di 3 secondi attraverso la funzione "setTimeout"
         await new Promise((resolve) => setTimeout(resolve, 3000));
         // Viene eseguita la chiamata API per effettuare il login. Non essendo una chiamata in "local", deve essere specificato l'indirizzo corretto relativo al sito di hosting.
-        await axios.post('https://dontnod-production.up.railway.app/api/login', {
-          email: email, // Uno dei campi che deve essere riempito per effettuare il login 
-          password: password // Uno dei campi che deve essere riempito per effettuare il login 
-        });
+        // await axios.post('https://dontnod-production.up.railway.app/api/login', {
+        //   email: email, // Uno dei campi che deve essere riempito per effettuare il login 
+        //   password: password // Uno dei campi che deve essere riempito per effettuare il login 
+        // });
 
         // Chiamata API ma in "local"
-        // await axios.post('http://127.0.0.1:8000/api/login', { 
-        //   email: email,
-        //   password: password
-        // });
+        await axios.post('http://127.0.0.1:8000/api/login', { 
+          email: email,
+          password: password
+        });
 
         setIsLoading(false); // Dopo i 3s viene nascosto il caricamento, in questo caso la GIF
     
