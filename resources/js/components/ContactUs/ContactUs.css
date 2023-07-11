@@ -107,6 +107,13 @@
     margin-left: 10px;
 }
 
+.contact-us--done--icon {
+    color: rgb(0, 219, 0);
+    font-size: 21px;
+    width: 25px;
+    margin-left: 10px;
+}
+
 .contact-us h5 {
     color: white;
     margin-top: 20px;
