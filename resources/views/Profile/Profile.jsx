@@ -21,7 +21,7 @@ const Profile = () => {
     const logOut = async (event) => { // Gestione del LogOut
         event.preventDefault(); // Uso "preventDefault" per prevenire il comportomanto di default di un pulsante.
         try {
-          // await axios.post('https://dontnod-production.up.railway.app/api/logout'); // Viene effettuata la chiamata API
+          // Viene effettuata la chiamata API
           await axios.post('http://127.0.0.1:8000/api/logout'); 
           localStorage.setItem('isLoggedIn', 'false'); // Il valore di "isLoggedIn" presente nel localStorage, viene impostato uguale a "false", quindi l'utente è scollegato.
           localStorage.removeItem('userId') // Viene rimossa la voce "userId" dal localStorage
