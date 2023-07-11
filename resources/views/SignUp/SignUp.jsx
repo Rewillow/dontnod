@@ -14,6 +14,7 @@ const SignUp = () => {
     const [isLoading, setIsLoading] = useState(false) // // Creo la costante utilizzando useState e impostando il valore iniziale uguale a "false"
     const [errorMessage, setErrorMessage] = useState("") // Creo la costante che gestisce il messaggio di errore, usando useState, e impostando il valore iniziale uguale a una stringa vuota
     const navigate = useNavigate(); // Creo la costante utilizzando useNavigate
+    const [isDisabled, setIsDisabled] = useState(false)
 
     useEffect(() => { // Richiamo useEffect per fare in modo che venga mostrato il relativo errore e dopo 5s questo scomparirà. Per fare ciò sono stati utilizzate le funzioni "setTimeout" e "clearTimeout"
       if (errorMessage) {
@@ -33,16 +34,10 @@ const SignUp = () => {
         const password = document.querySelector('input[name="password"]').value; // Questa costante ritorna il valore presente nell'input "password"
       
         try {
-
+          setIsDisabled(!isDisabled)
           setIsLoading(true); // Impostando il valore di setIsLoading uguale a "true", viene avviato il processo di caricamento 
           // Viene simulato un ritardo di 3 secondi attraverso la funzione "setTimeout"
           await new Promise((resolve) => setTimeout(resolve, 3000));
-          // Viene eseguita la chiamata API per effettuare la registrazione. Non essendo una chiamata in "local", deve essere specificato l'indirizzo corretto relativo al sito di hosting.
-          // await axios.post('https://dontnod-production.up.railway.app/api/register', {
-          //   name: name,
-          //   email: email,
-          //   password: password,
-          // });
 
           await axios.post('http://127.0.0.1:8000/api/register', {
             name: name,
@@ -73,9 +68,9 @@ const SignUp = () => {
                 <div className='signup--elements'>
                    <div className='signup--container--input' >
                    <div className='signup--field'>
-                   <input type='text' placeholder='Username' name='name' className='signup--field--email'></input>
-                   <input type='text' placeholder='Email' name='email' className='signup--field--email'></input>
-                   <input type='password' placeholder='Password' name='password'></input>
+                   <input type='text' placeholder='Username' name='name' className='signup--field--email' disabled={isDisabled}></input>
+                   <input type='text' placeholder='Email' name='email' className='signup--field--email' disabled={isDisabled}></input>
+                   <input type='password' placeholder='Password' name='password' disabled={isDisabled}></input>
                    {errorMessage && <p style={{ color: `red`, fontWeight: `light`, marginTop: `7px`, fontSize: `14px` }}>{errorMessage}</p>}
                    <button className='signup--field--button' onClick={registerUser}>SIGN UP</button>
                    <p className='signup--field--signup'>Do you already have an account? <a href='/login'>Click here!</a></p>
