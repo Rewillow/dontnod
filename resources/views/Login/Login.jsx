@@ -14,6 +14,7 @@ const Login = () => {
     const [isLoading, setIsLoading] = useState(false) // Creo la costante utilizzando useState e impostando il valore iniziale uguale a "false"
     const navigate = useNavigate(); // Creo la costante "navigate" richiamando useNavigate
     const [errorMessage, setErrorMessage] = useState('') // Creo la costante utile al messaggio di errore impostando il valore iniziale uguale a una stringa vuota.
+    const [isDisabled, setIsDisabled] = useState(false)
 
     useEffect(() => { // Richiamo useEffect per fare in modo che venga mostrato il relativo errore e dopo 5s questo scomparirà. Per fare ciò sono stati utilizzate le funzioni "setTimeout" e "clearTimeout"
     if (errorMessage) {
@@ -25,7 +26,7 @@ const Login = () => {
     }
     }, [errorMessage]);
 
-
+    
     // Chiamata POST per effettuare il LOGIN
     const loginUser = async (event) => {
       event.preventDefault(); // Uso "preventDefault" per prevenire il comportomanto di default di un pulsante.
@@ -33,16 +34,12 @@ const Login = () => {
       const password = document.querySelector('input[name="password"]').value; // Questa costante ritorna il valore presente nell'input "password"
     
       try {
+        setIsDisabled(!isDisabled)
         setIsLoading(true); // Impostando il valore di setIsLoading uguale a "true", viene avviato il processo di caricamento 
         // Viene simulato un ritardo di 3 secondi attraverso la funzione "setTimeout"
         await new Promise((resolve) => setTimeout(resolve, 3000));
-        // Viene eseguita la chiamata API per effettuare il login. Non essendo una chiamata in "local", deve essere specificato l'indirizzo corretto relativo al sito di hosting.
-        // await axios.post('https://dontnod-production.up.railway.app/api/login', {
-        //   email: email, // Uno dei campi che deve essere riempito per effettuare il login 
-        //   password: password // Uno dei campi che deve essere riempito per effettuare il login 
-        // });
 
-        // Chiamata API ma in "local"
+        // Chiamata API
         await axios.post('http://127.0.0.1:8000/api/login', { 
           email: email,
           password: password
@@ -69,8 +66,8 @@ const Login = () => {
                 <div className='login--elements'>
                    <div className='login--container--input' >
                    <div className='login--field'>
-                   <input type='email' placeholder='Email' name='email' className='login--field--email'></input>
-                   <input type='password' placeholder='Password' name='password'></input>
+                   <input type='email' placeholder='Email' name='email' className='login--field--email' disabled={isDisabled}></input>
+                   <input type='password' placeholder='Password' name='password' disabled={isDisabled}></input>
                    {/* Specifico le caratteristiche di stile del messaggio di errore */}
                    {errorMessage && <p style={{ color: `red`, fontWeight: `regular`, marginTop: `7px`, fontSize: `14px` }}>{errorMessage}</p>}
                    <button className='login--field--button' onClick={loginUser}>LOGIN</button>
