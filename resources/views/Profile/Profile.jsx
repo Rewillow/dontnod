@@ -11,6 +11,7 @@ import Account from '../../js/components/Account/Account'; // Importo il compone
 import VideoGames from '../../js/components/VideoGames/VideoGames'; // Importo il componente Videogames
 
 import { motion } from 'framer-motion' // Importo il componente per il funzionamento della transizione da pagina a pagina 
+import ClientAPI from '../../js/components/ClientAPI';
 
 const Profile = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // Creo la costante utilizzando useState e impostando il valore iniziale uguale a "false"
@@ -22,7 +23,7 @@ const Profile = () => {
         event.preventDefault(); // Uso "preventDefault" per prevenire il comportomanto di default di un pulsante.
         try {
           // Viene effettuata la chiamata API
-          await axios.post('http://127.0.0.1:8000/api/logout'); 
+          await ClientAPI.logout(); 
           localStorage.setItem('isLoggedIn', 'false'); // Il valore di "isLoggedIn" presente nel localStorage, viene impostato uguale a "false", quindi l'utente è scollegato.
           localStorage.removeItem('userId') // Viene rimossa la voce "userId" dal localStorage
           navigate('/login') // L'utente viene reindirizzato alla pagina "Login"

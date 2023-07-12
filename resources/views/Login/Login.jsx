@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react' // Importo useState e useEffect
 import Loading from "../../../public/assets/Loading.gif" // Importo l'icona di caricamento
 
 import { motion } from 'framer-motion' // Importo il componente per il funzionamento della transizione da pagina a pagina 
+import ClientAPI from '../../js/components/ClientAPI'
 
 
 const Login = () => {
@@ -40,10 +41,7 @@ const Login = () => {
         await new Promise((resolve) => setTimeout(resolve, 3000));
 
         // Chiamata API
-        await axios.post('http://127.0.0.1:8000/api/login', { 
-          email: email,
-          password: password
-        });
+        await ClientAPI.login(email, password)
 
         setIsLoading(false); // Dopo i 3s viene nascosto il caricamento, in questo caso la GIF
     
@@ -56,6 +54,7 @@ const Login = () => {
           setErrorMessage(error.response.data.message); 
         }
         setIsLoading(false); // Il messaggio viene nascosto dopo 3s, ma in questo caso riguarda l'errore
+        setIsDisabled(isDisabled)
       }
     };
     

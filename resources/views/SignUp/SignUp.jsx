@@ -1,6 +1,7 @@
 import './SignUp.css' // Importo il file di stile
 
 import axios from 'axios' // Importo axios
+import ClientAPI from '../../js/components/ClientAPI';
 
 import { useState, useEffect } from 'react'; // Importo useState che gestisce lo stato delle variabili e useEffect 
 import { useNavigate } from 'react-router-dom'; // Importo useNavigate che permette di reindirizzare l'utente in un'altra rotta del mio sito
@@ -39,11 +40,7 @@ const SignUp = () => {
           // Viene simulato un ritardo di 3 secondi attraverso la funzione "setTimeout"
           await new Promise((resolve) => setTimeout(resolve, 3000));
 
-          await axios.post('http://127.0.0.1:8000/api/register', {
-            name: name,
-            email: email,
-            password: password,
-          });
+          await ClientAPI.signUp(name, email, password)
 
           setIsLoading(false); // Dopo i 3s viene nascosto il caricamento, in questo caso la GIF
 
@@ -52,12 +49,14 @@ const SignUp = () => {
           window.location.reload(); // Viene riaggiornata la pagina
         } 
         catch (error) { // Viene catturato l'errore da "catch"
-
-          setIsLoading(false); // Il messaggio viene nascosto dopo 3s, ma in questo caso riguarda l'errore
-
           if(error.response && error.response.data && error.response.data.message) {
             setErrorMessage(error.response.data.message)
             } 
+
+          setIsLoading(false); // Il messaggio viene nascosto dopo 3s, ma in questo caso riguarda l'errore
+          setIsDisabled(isDisabled)
+
+
         }
       };
       
