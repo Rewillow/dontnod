@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express');
-var session = require('cookie-session')
+var session = require("cookie-session")
 const cors = require("cors")
 const app = express();
 const favoriteRouter = require("./routes/favorite.router")

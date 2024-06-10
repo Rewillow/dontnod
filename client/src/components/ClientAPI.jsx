@@ -49,8 +49,13 @@ const ClientAPI = {
     })
   },
 
-  videogames: () => {
-    return axios.get('https://dontnod-server.vercel.app/api/listGames');
+  videogames: async () => {
+    try {
+      const response = await axios.get('https://dontnod-server.vercel.app/api/listGames');
+      return response
+    } catch (error) {
+      console.error(error);
+    }
   },
 
   addFavorites: async (gameId, userId) => {
